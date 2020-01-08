@@ -1,0 +1,112 @@
+/*
+Device = Laptops,Desktops,Tablets,Low Resolution Tablets, Mobiles (Landscape)
+Screen = 481px to higher resolution desktops
+*/
+@media (min-width:481px){
+header{
+    background-color: #00009e;
+    height: 75px;
+    display: flex;
+    align-items: center;
+    border-bottom: 3px solid white;
+}
+header .logo{
+    width: 90px;
+    height: 90px;
+}
+header p{
+    color: white;
+    font-weight: 800;
+    font-size:1.2rem;
+}
+ul{
+    margin: 5px;
+    display: flex;
+    align-items: flex-end;
+  }
+  header ul li{
+    list-style: none;
+    text-align: left;
+    padding: 10px;
+    color: white;
+    font-weight: 500;
+    cursor: pointer;
+  }
+  header ul li p{
+    color:#00009e;
+    font-weight: 700;
+    font-size:1.2rem;
+    border: 3px solid #00009e;
+    padding:10px;
+    display: inline-block;
+  }
+  header ul li a:hover{
+    transition: border-bottom 0.25s;
+    border-bottom: 2px solid white;
+  }
+  .header_active{
+    border-bottom: 2px solid white;
+  }
+  a{
+    color:white;
+    text-decoration: none;
+  }
+}
+/*
+##Device = Most of the Smartphones Mobiles (Portrait)
+##Screen = B/w 320px to 479px
+##Device = 대부분의 스마트폰 모바일 기기(세로)
+##Screen = 320px에서 479px 사이
+*/  
+@media (min-width: 0px) and (max-width: 480px) {
+  header{
+    background-color: #00009e;
+    height: 75px;
+    display: flex;
+    align-items: center;
+    border-bottom: 3px solid white;
+}
+header .logo{
+    width: 80px;
+    height: 80px;
+}
+header p{
+    color: white;
+    font-weight: 800;
+    font-size:0.8rem;
+    display: none;
+}
+ul{
+    margin: 5px;
+    display: flex;
+    align-items: flex-end;
+    padding-left: 0;
+  }
+  header ul li{
+    list-style: none;
+    text-align: left;
+    padding: 10px;
+    color: white;
+    font-weight: 500;
+    cursor: pointer;
+  }
+  header ul li p{
+    color:#00009e;
+    font-weight: 700;
+    font-size:1.2rem;
+    border: 3px solid #00009e;
+    padding:10px;
+    display: inline-block;
+  }
+  header ul li a:hover{
+    transition: border-bottom 0.25s;
+    border-bottom: 2px solid white;
+  }
+  .header_active{
+    border-bottom: 2px solid white;
+  }
+  a{
+    color:white;
+    text-decoration: none;
+  }
+}

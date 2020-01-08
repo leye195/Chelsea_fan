@@ -1,0 +1,47 @@
+.App {
+  height: 645px;
+}
+h1,h2,h3,h4,h5{
+  margin: 0;
+}
+h3{
+  margin-left: 20px;
+  color:white;
+}
+@keyframes fadeIn{
+  from{
+    opacity: 0.4;
+  }to{
+    opacity: 1.0;
+  }
+}
+.history,.team{
+  position: relative;
+  z-index: 0;
+}
+.bg{
+  height: 100% !important;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  background-repeat: round;
+  animation: fadeIn 2s;
+}
+.history>div>img,.team>div>img{
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  left: 0;
+}
+.history,.team{
+  background: #00009e;
+}
+.history h3,.team h3{
+  padding-top:20px;
+  display: inline-block;
+  border-bottom: 1px solid white;
+}
+
+

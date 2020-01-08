@@ -1,0 +1,415 @@
+@media (min-width:768px){
+.team ul{
+    list-style: none;
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
+    color: white;
+}
+.team ul li{
+    cursor: pointer;
+    margin: 5px;
+    padding: 5px;
+    border: 2px solid white;
+    font-weight: 700;
+}
+.team_ul li:not([className*="active"]):hover{
+    transition: background-color 1.3s;
+    background-color: white;
+    color: #00009e;
+}
+.active{
+    background-color: white !important;
+    color:#00009e !important;
+    font-weight: 700;
+    border: 2px solid white !important;
+}
+.players h4,.management h4{
+    color: white;
+    margin-left: 10px;
+    padding-left: 10px;
+}
+.players ul,.management ul{
+    display: grid;
+    grid-template-columns: repeat(3,33%);
+    padding: 0;
+    padding-left: 10px;
+    margin-bottom: 0;
+} 
+.player ul li,.management ul li{
+    border:none;
+    margin: 5px;
+    padding:0;
+    background-image: linear-gradient(#213269,#e2e2e2);
+}
+/*Player css style*/
+.player ul li{
+    transition: all 2s;
+    -webkit-transition: all .3s ease-in-out;
+    transform: scale(1);
+    -webkit-transform: scale(1);
+    border-radius: 5px;
+}
+.player ul li:hover{
+    transform: scale(1.025);
+}
+.player ul li>div{
+    position: relative;
+}
+.player ul li>div>div{
+    position: absolute;
+    display: inline-block;
+    width: 100%;
+}
+.player li>div img{
+    position: relative;
+    height: 140px;
+    vertical-align: middle;
+    float: right;
+    overflow:hidden
+}
+.player .name{
+    font-size:1.2rem;
+    margin: .2rem 0 .5rem;
+    padding-right: 8rem;
+    padding-left: 10px;
+    line-height: 1;
+    height: 48px;
+}
+.player .position,.player .number{
+    font-size: 1.2rem;
+    font-weight: 100;
+    padding-left: 10px;
+}
+.player .country{
+    font-size: 1.0rem;
+    font-weight: 100;
+    margin-top: 5px;
+    padding-top: 5px;
+    padding-left: 10px;
+}
+/*manager css style*/
+.management ul li{
+    transition: all 2s;
+    -webkit-transition: all .3s ease-in-out;
+    transform: scale(1);
+    -webkit-transform: scale(1);
+    border-radius: 5px;
+}
+.management ul li:hover{
+    transform: scale(1.025);
+}
+.management ul li>div{
+    position: relative;
+}
+.management ul li>div>div{
+    position: absolute;
+    display: inline-block;
+}
+.management li>div img{
+    position: relative;
+    height: 140px;
+    width: 100px;
+    vertical-align: middle;
+    float: right;
+}
+.management .name{
+    font-size:1.2rem;
+    margin: .2rem 0 .5rem;
+    padding-right: 8rem;
+    padding-left: 10px;
+    line-height: 1;
+    height: 48px;
+}
+.management .role,.management .club{
+    font-size: 0.3rem;
+    font-weight: 100;
+    padding-left: 10px;
+    padding-top: 5px;
+}
+.management .country{
+    font-size: 1.0rem;
+    font-weight: 100;
+    margin-top: 5px;
+    padding-top: 5px;
+    padding-left: 10px;
+}
+}
+@media (max-width:767px) and (min-width:481px){
+    .team ul{
+        list-style: none;
+        display: flex;
+        align-items: center;
+        flex-direction: row-reverse;
+        color: white;
+    }
+    .team ul li{
+        cursor: pointer;
+        margin: 5px;
+        padding: 5px;
+        border: 2px solid white;
+        font-weight: 700;
+    }
+    .team_ul li:not([className*="active"]):hover{
+        transition: background-color 1.3s;
+        background-color: white;
+        color: #00009e;
+    }
+    .active{
+        background-color: white !important;
+        color:#00009e !important;
+        font-weight: 700;
+        border: 2px solid white !important;
+    }
+    .players h4,.management h4{
+        color: white;
+        margin-left: 10px;
+        padding-left: 10px;
+    }
+    .players ul,.management ul{
+        display: grid;
+        grid-template-columns: repeat(3,33%);
+        padding: 0;
+        padding-left: 10px;
+        margin-bottom: 0;
+    } 
+    .player ul li,.management ul li{
+        border:none;
+        margin: 5px;
+        padding:0;
+        background-image: linear-gradient(#213269,#e2e2e2);
+    }
+    /*Player css style*/
+    .player ul li{
+        transition: all 2s;
+        -webkit-transition: all .3s ease-in-out;
+        transform: scale(1);
+        -webkit-transform: scale(1);
+        border-radius: 5px;
+    }
+    .player ul li:hover{
+        transform: scale(1.025);
+    }
+    .player ul li>div{
+        position: relative;
+    }
+    .player ul li>div>div{
+        position: absolute;
+        display: inline-block;
+        width: 100%;
+    }
+    .player li>div img{
+        position: relative;
+        height: 140px;
+        width: 55%;
+        vertical-align: middle;
+        float: right;
+        overflow:hidden
+    }
+    .player .name{
+        font-size:1.0rem;
+        margin: .2rem 0 .5rem;
+        padding-right: 8rem;
+        padding-left: 10px;
+        line-height: 1;
+        height: 48px;
+        
+    }
+    .player .position,.player .number{
+        font-size: 0.5rem;
+        font-weight: 100;
+        padding-left: 10px;
+    }
+    .player .country{
+        font-size: 0.25rem;
+        font-weight: 100;
+        margin-top: 5px;
+        padding-top: 5px;
+        padding-left: 10px;
+    }
+    /*manager css style*/
+    .management ul li{
+        transition: all 2s;
+        -webkit-transition: all .3s ease-in-out;
+        transform: scale(1);
+        -webkit-transform: scale(1);
+        border-radius: 5px;
+        width: 88%;
+    }
+    .management ul li:hover{
+        transform: scale(1.025);
+    }
+    .management ul li>div{
+        position: relative;
+    }
+    .management ul li>div>div{
+        display: inline-block;
+        width: 100%;
+    }
+    .management li>div img{
+        position: relative;
+        height: 140px;
+        width: 100%;
+        vertical-align: middle;
+        z-index: -1;
+    }
+    .management .name{
+        font-size: 1.0rem;
+        margin: .1rem 0 .1rem;
+        padding-right: 8rem;
+        padding-left: 5px;
+        line-height: 1;
+        height: 35px;
+    }
+    .management .role,.management .club{
+        font-size: 0.5rem;
+        font-weight: 100;
+        padding-left: 5px;
+        padding-top: 5px;
+    }
+    .management .country{
+        font-size: 0.2rem;
+        font-weight: 100;
+        margin-top: 5px;
+        padding-top: 5px;
+        padding-left: 5px;
+    }
+}
+@media (min-width: 0px) and (max-width: 480px) {
+    .team ul{
+        list-style: none;
+        display: flex;
+        align-items: center;
+        flex-direction: row-reverse;
+        color: white;
+    }
+    .team ul li{
+        cursor: pointer;
+        margin: 5px;
+        padding: 5px;
+        border: 2px solid white;
+        font-weight: 700;
+    }
+    .team_ul li:not([className*="active"]):hover{
+        transition: background-color 1.3s;
+        background-color: white;
+        color: #00009e;
+    }
+    .active{
+        background-color: white !important;
+        color:#00009e !important;
+        font-weight: 700;
+        border: 2px solid white !important;
+    }
+    .players h4,.management h4{
+        color: white;
+        margin-left: 10px;
+        padding-left: 10px;
+    }
+    .players ul,.management ul{
+        display: flex;
+        flex-direction: column;
+        padding: 0;
+        padding-left: 10px;
+        margin-bottom: 0;
+    } 
+    .player ul li,.management ul li{
+        border:none;
+        margin: 5px;
+        padding:0;
+        background-image: linear-gradient(#213269,#e2e2e2);
+    }
+    /*Player css style*/
+    .player ul li{
+        transition: all 2s;
+        -webkit-transition: all .3s ease-in-out;
+        transform: scale(1);
+        -webkit-transform: scale(1);
+        border-radius: 5px;
+        height: 82px;
+        width: 100%;
+    }
+    .player ul li:hover{
+        transform: scale(1.025);
+    }
+    .player ul li>div{
+        position: relative;
+    }
+    .player ul li>div>div{
+        display: inline;
+    }
+    .player li>div img{
+        position: absolute;
+        height: 82px;
+        vertical-align: middle;
+        top: 0px;
+        right: 20px;
+    }
+    .player .name{
+        font-size: 1.0rem;
+        /* margin: .2rem 0 .5rem; */
+        padding-right: 8rem;
+        padding-left: 0px;
+        line-height: 1;
+        /* height: 48px;*/
+    }
+    .player .position,.player .number{
+        font-size: 0.5rem;
+        font-weight: 100;
+        padding-left: 10px;
+    }
+    .player .country{
+        font-size: 0.25rem;
+        font-weight: 100;
+        margin-top: 5px;
+        padding-top: 5px;
+        padding-left: 10px;
+    }
+    /*manager css style*/
+    .management ul li{
+        transition: all 2s;
+        -webkit-transition: all .3s ease-in-out;
+        transform: scale(1);
+        -webkit-transform: scale(1);
+        border-radius: 5px;
+        height: 82px;
+        width: 100%;
+    }
+    .management ul li:hover{
+        transform: scale(1.025);
+    }
+    .management ul li>div{
+        position: relative;
+    }
+    .management ul li>div>div{
+        display: inline-block;
+        width: 100%;
+    }
+    .management li>div img{
+        position: absolute;
+        height: 82px;
+        vertical-align: middle;
+        top: 0px;
+        right: 20px;
+    }
+    .management .name{
+        font-size: 1.0rem;
+        /* margin: .2rem 0 .5rem; */
+        padding-right: 8rem;
+        padding-left: 0px;
+        line-height: 1;
+        /* height: 48px;*/
+    }
+    .management .role,.management .club{
+        font-size: 0.5rem;
+        font-weight: 100;
+        padding-left: 10px;
+    }
+    .management .country{
+        font-size: 0.25rem;
+        font-weight: 100;
+        margin-top: 5px;
+        padding-top: 5px;
+        padding-left: 10px;
+    }
+}

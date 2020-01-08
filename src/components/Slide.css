@@ -1,0 +1,12 @@
+.slider_p{
+    color: white;
+    font-size: 2.5rem;
+    font-weight: 600;
+    text-shadow: 5px 3px 20px #ffffff;
+    margin: 0;
+    width: 100%;
+    text-align: center;
+}
+.slider_p p{
+    margin-top:0;
+}
