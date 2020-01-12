@@ -24,7 +24,7 @@
     font-weight: 700;
     border: 2px solid white !important;
 }
-.players h4,.management h4{
+.players h4,.management h4,.season h4{
     color: white;
     margin-left: 10px;
     padding-left: 10px;
@@ -134,6 +134,9 @@
     padding-top: 5px;
     padding-left: 10px;
 }
+/*Season*/
+
+
 }
 @media (max-width:767px) and (min-width:481px){
     .team ul{
