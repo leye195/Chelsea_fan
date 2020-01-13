@@ -1,8 +1,6 @@
-@keyframes slide-down {
-    0% { opacity: 0; -webkit-transform: translateY(-2%); padding-bottom: 0px; }   
-  100% { opacity: 1; -webkit-transform: translateY(0); padding-bottom: 40px; }
-}
+
 @media (min-width:768px){
+
 .team ul{
     list-style: none;
     display: flex;
@@ -198,9 +196,11 @@
     border-radius: 5px;
     width: 100%;
     text-align: center;
+    transition: 0.3s;
 }
 .more:hover{
     background:#e3e3e3;
+    color: white;
 }
 .more div{
     padding:5px;
@@ -286,6 +286,10 @@ tbody tr{
 }
 .t_hide{
     display: none;
+}
+@keyframes slide-down {
+    0% { opacity: 0; -webkit-transform: translateY(-2%);}   
+  100% { opacity: 1; -webkit-transform: translateY(0);}
 }
 }
 @media (max-width:767px) and (min-width:481px){
@@ -580,6 +584,10 @@ tbody tr{
     .t_hide{
         display: none;
     }
+    @keyframes slide-down {
+        0% { opacity: 0; -webkit-transform: translateY(-2%);}   
+      100% { opacity: 1; -webkit-transform: translateY(0);}
+    }
 }
 @media (min-width: 0px) and (max-width: 480px) {
     .team{
@@ -591,6 +599,7 @@ tbody tr{
         align-items: center;
         flex-direction: row-reverse;
         color: white;
+        justify-content: center;
     }
     .team ul li{
         cursor: pointer;
@@ -785,9 +794,11 @@ tbody tr{
         border-radius: 5px;
         width: 100%;
         text-align: center;
+        
     }
     .more:hover{
         background:#e3e3e3;
+        color:white;
     }
     .more div{
         padding:5px;
@@ -875,5 +886,9 @@ tbody tr{
     }
     .t_hide{
         display: none;
+    }
+    @keyframes slide-down {
+        0% { opacity: 0; -webkit-transform: translateY(-2%); padding-bottom: 0px; }   
+      100% { opacity: 1; -webkit-transform: translateY(0); padding-bottom: 40px; }
     }
 }

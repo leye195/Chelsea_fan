@@ -7,7 +7,7 @@ const Season=(props)=>{
         const section=target.parentNode.parentNode.parentNode;
         if(target.classList.contains("up")){
             section.style.paddingBottom="0";
-        }else if(target.classList.contains("down")){
+        }else if(target.classList.contains("down") && window.innerWidth<=425){
             section.style.paddingBottom="40px";
         }
         target.classList.toggle("up");
@@ -17,7 +17,9 @@ const Season=(props)=>{
     },[]);
     const getSeasonInfo=()=>{
         const {seasons}=props;
-        const tags=seasons.map((item)=>{
+        const s_id=[210,79,54,42,27,22,21,20,19,18,17,16,15,14,13,12,11,10,9,8,7,6,5,4,3,2,1];
+        const tags=seasons.map((item,idx)=>{
+            //console.log(s_id[idx]);
             return(
                 <section className="season" key={item.season}>
                     <div>
@@ -59,7 +61,12 @@ const Season=(props)=>{
                             </dd>
                         </dl>
                         <div className="more">
-                            <Link to="/stats"><div>more</div></Link>
+                            <Link to={{pathname:"/stats",state:{
+                                _id:s_id[idx]
+                            }
+                        }}>
+                                <div>more</div>
+                            </Link>
                         </div>
                         </div>
                         <div className="club__kits__table">

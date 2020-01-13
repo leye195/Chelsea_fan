@@ -19,10 +19,10 @@ module.exports=function (app,Player,Manager){
         })
     });
 
-    /*
+/*
     Chelsea All Season record API
-    Data Crawled from https://www.premierleague.com/clubs/4/Chelsea/season-history
-    */
+    Data Crawled from https://www.premierleague.com
+*/
     app.get("/seasons",(req,res)=>{
         const url="https://www.premierleague.com/clubs/4/Chelsea/season-history";
         request(url,(error,request,body)=>{
@@ -46,7 +46,6 @@ module.exports=function (app,Player,Manager){
                 const lost=$(ele).find("td:nth-child(6)").text();
                 const gd=$(ele).find("td:nth-child(7)").text();
                 const points=$(ele).find("td.points").text();
-                console.log(points);
                 result[idx]={
                     ...result[idx],
                     "matches":matches,
@@ -95,5 +94,120 @@ module.exports=function (app,Player,Manager){
             });
             res.json({error:0,results:result});
         })
+    });
+    app.get("/season/stats/:id",(req,res)=>{
+        const _id=req.params['id'] || -1;
+        const url=`https://www.premierleague.com/clubs/4/Chelsea/stats?se=${_id}`;
+        let result={};
+        request(url,(error,request,body)=>{
+            const $=cheerio.load(body);
+            const $topStats=$("div.topStatList");
+            const $statsLists=$("div.statsListBlock");
+            $topStats.each((idx,ele)=>{
+                const played=$(ele).find("div:nth-child(1) > span > span").text();//played
+                const w=$(ele).find("div:nth-child(2) > span > span").text();//win
+                const l=$(ele).find("div:nth-child(3) > span > span").text();//lose
+                const g=$(ele).find("div:nth-child(4) > span > span").text();//goal
+                const gc=$(ele).find("div:nth-child(3) > span > span").text();//goals conceded
+                const c=$(ele).find("div:nth-child(4) > span > span").text();//clean sheet 
+                result={
+                    "played":played,
+                    "wins":w,
+                    "losses":l,
+                    "goals":g,
+                    "goalsConceded":gc,
+                    "cleanSheets":c
+                }
+            });
+            $statsLists.each((idx,ele)=>{
+                const header=$(ele).find("div.headerStat span").text();
+                if(header==="Attack"){
+                    const goals=$(ele).find("div:nth-child(2) > span > span").text();
+                    const goalPerMatch=$(ele).find("div:nth-child(3) > span >span").text();
+                    const shots=$(ele).find("div:nth-child(4) > span > span").text();
+                    const shotsOnTar=$(ele).find("div:nth-child(5) > span > span").text();
+                    const shootAccur=$(ele).find("div:nth-child(6) > span > span").text();
+                    const penaltiesGoal=$(ele).find("div:nth-child(7) > span > span").text();
+                    const bigChances=$(ele).find("div:nth-child(8) > span > span").text();
+                    const hitWoodWork=$(ele).find("div:nth-child(9) > span > span").text();
+                    result={
+                        ...result,
+                        "attack":{
+                            "goals":goals,
+                            "goalPerMatch":goalPerMatch,
+                            "shots":shots,
+                            "shotsOnTar":shotsOnTar,
+                            "shootAccurancy":shootAccur,
+                            "penaltiesGoal":penaltiesGoal,
+                            "bigChances":bigChances,
+                            "hitWoodWork":hitWoodWork
+                        }
+                    }
+                }else if(header==="Team Play"){
+                    const passes=$(ele).find("div:nth-child(2) > span > span").text();
+                    const perMatch=$(ele).find("div:nth-child(3) > span >span").text();
+                    const accur=$(ele).find("div:nth-child(4) > span > span").text();
+                    const crosses=$(ele).find("div:nth-child(5) > span > span").text();
+                    const c_accur=$(ele).find("div:nth-child(6) > span > span").text();
+                    result={
+                        ...result,
+                        "teamPlay":{
+                            "passes":passes,
+                            "passPerMatch":perMatch,
+                            "passAccuracy":accur,
+                            "crosses":crosses,
+                            "c_accur":c_accur
+                        }
+                    }
+                }else if(header==="Defence"){
+                    const cleanSheets=$(ele).find("div:nth-child(2) > span > span").text();
+                    const goalsConceded=$(ele).find("div:nth-child(3) > span > span").text();
+                    const goalsConcededPer=$(ele).find("div:nth-child(4) > span > span").text();
+                    const saves=$(ele).find("div:nth-child(5) > span > span").text();
+                    const tackles=$(ele).find("div:nth-child(6) > span > span").text();
+                    const tackleSuccess=$(ele).find("div:nth-child(7) > span > span").text();
+                    const blockedShots=$(ele).find("div:nth-child(8) > span > span").text();
+                    const interceptions=$(ele).find("div:nth-child(9) > span > span").text();
+                    const clearances=$(ele).find("div:nth-child(10) > span > span").text();
+                    const headClear=$(ele).find("div:nth-child(11) > span > span").text();
+                    const arialBattles=$(ele).find("div:nth-child(12) > span > span").text();
+                    const ownGoal=$(ele).find("div:nth-child(13) > span > span").text();
+                    result={
+                        ...result,
+                        "defence":{
+                            "cleanSheets":cleanSheets,
+                            "goalConceded":goalsConceded,
+                            "goalConcededPer":goalsConcededPer,
+                            "saves":saves,
+                            "tackles":tackles,
+                            "tackleSuccess":tackleSuccess,
+                            "blockedShots":blockedShots,
+                            "interception":interceptions,
+                            "clearances":clearances,
+                            "headClearances":headClear,
+                            "arialBattles":arialBattles,
+                            "ownGoals":ownGoal
+                        }
+                    }
+
+                }else if(header==="Discipline"){
+                    const yellow=$(ele).find("div:nth-child(2) > span > span").text();
+                    const red=$(ele).find("div:nth-child(3) > span > span").text();
+                    const foul=$(ele).find("div:nth-child(4) > span > span").text();
+                    const offside=$(ele).find("div:nth-child(5) > span > span").text();
+                    result={
+                        ...result,
+                        "discipline":{
+                            "yellow":yellow,
+                            "red":red,
+                            "fouls":foul,
+                            "offsides":offside
+                        }
+                    }
+                }
+            })
+            res.json({error:0,results:result});
+        });
+        
     });
 }

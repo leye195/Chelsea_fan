@@ -8,3 +8,6 @@ export function get_staffs(){
 export function get_seasons(){
     return axios.get("http://localhost:3030/seasons");
 }
+export function get_stats(id){
+    return axios.get(`http://localhost:3030/season/stats/${id}`);
+}
