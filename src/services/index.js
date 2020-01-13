@@ -5,3 +5,6 @@ export  function get_player(){
 export function get_staffs(){
     return axios.get("http://localhost:3030/managers");
 }
+export function get_seasons(){
+    return axios.get("http://localhost:3030/seasons");
+}

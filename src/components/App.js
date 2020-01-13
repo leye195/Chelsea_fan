@@ -8,6 +8,7 @@ import Footer from './Footer';
 import Home from '../routes/Home';
 import About from '../routes/About';
 import Team from '../routes/Team';
+import Stats from '../routes/Stats';
 function App() {
   return (
     <div className="App">
@@ -16,6 +17,7 @@ function App() {
           <Route path="/" exact component={Home}></Route>
           <Route path="/about" component={About}></Route>
           <Route path="/team" component={Team}></Route>
+          <Route path="/stats" component={Stats}></Route>
           <Footer></Footer>
         </HashRouter>
     </div>

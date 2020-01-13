@@ -1,5 +1,6 @@
 const http=require("http"),express=require("express");
 const bodyparser=require('body-parser');
+const helmet=require("helmet");
 const cor=require("cors");
 let mongoose=require('mongoose');
 let db=mongoose.connection;
@@ -9,6 +10,7 @@ const app=express();
 app.use('/static',express.static(__dirname + '/public'))
 app.use(bodyparser.urlencoded({extended:true}));
 app.use(bodyparser.json());
+app.use(helmet());
 app.use(cor());
 
 //connect MongoDB

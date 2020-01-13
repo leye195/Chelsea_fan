@@ -31,7 +31,7 @@ module.exports=function (app,Player,Manager){
             const $descrip=$("div.club-archive__description-list");
             const $season=$('h2.club-archive__heading-main');
             const $kits=$("div.club-archive__kits");
-            const $team=$("tr.row--highlight");
+            const $team=$("div.club-archive__league-pos > div > div > div > div > table > tbody > tr.row--highlight");
             $season.each((idx,ele)=>{
                 const season=$(ele).text();
                 result[idx]={
@@ -40,11 +40,13 @@ module.exports=function (app,Player,Manager){
             });
             $team.each((idx,ele)=>{
                 const matches=$(ele).find("td:nth-child(3)").text();
+                //tr.row--highlight > td:nth-child(3)
                 const won=$(ele).find("td:nth-child(4)").text();
                 const draw=$(ele).find("td:nth-child(5)").text();
                 const lost=$(ele).find("td:nth-child(6)").text();
                 const gd=$(ele).find("td:nth-child(7)").text();
                 const points=$(ele).find("td.points").text();
+                console.log(points);
                 result[idx]={
                     ...result[idx],
                     "matches":matches,
@@ -91,7 +93,7 @@ module.exports=function (app,Player,Manager){
                     "kits":[home,away,third]
                 };
             });
-            res.json(result);
+            res.json({error:0,results:result});
         })
     });
 }

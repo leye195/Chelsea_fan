@@ -1,3 +1,7 @@
+@keyframes slide-down {
+    0% { opacity: 0; -webkit-transform: translateY(-2%); }   
+  100% { opacity: 1; -webkit-transform: translateY(0); }
+}
 @media (min-width:768px){
 .team ul{
     list-style: none;
@@ -24,10 +28,11 @@
     font-weight: 700;
     border: 2px solid white !important;
 }
-.players h4,.management h4,.season h4{
+.players h4,.management h4,.seasons h4{
     color: white;
     margin-left: 10px;
     padding-left: 10px;
+    margin-bottom: 5px;
 }
 .players ul,.management ul{
     display: grid;
@@ -135,8 +140,147 @@
     padding-left: 10px;
 }
 /*Season*/
+.season{
+    border-bottom: 7px solid #dcdcdc;
+}
+.season>div:first-child{
+    position: relative;
+    background-color: #37003c;
+    box-shadow: inset -3px -1px 14px 1px #9c88af;
+    color: #fff;
+    line-height: 3rem;
+    /*margin-bottom: 3rem;*/
+    padding: 0.2rem 0.2rem;
+}
+.season>div:first-child h4{
+    margin-bottom: 0;
+}
+.seasons>div:first-child h4+span {
+    position: absolute;
+    right: 2%;
+    top: 0;
+    cursor: pointer;
+}
+.club__{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction:row;
+    background-color: white;
+}
+.club__>div:first-child{
+    padding-left: 8px;
+    padding-right: 8px;
+    width: 20%;
+}
+.club__stats{
+    display: flex;
+    flex-direction: column;
+}
+.club__stats dt{
+    color: #76766f;
+    font-size:0.7rem;
+}
+.club__stats dd{
+    margin: 0;
+    font-weight: 700;
+    margin-bottom: 5px;
+    font-size: 0.8rem;
+}
+.club__stats dd p{
+    margin:0;
+}
+.more{
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    bottom: 10px;
+    border: 1px solid #6c6c6c;
+    border-radius: 5px;
+}
+.more div{
+    padding:5px;
+    color: #6c6c6c;
+}
+.club__kits__table{
+    position: relative;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    border-left: 1px solid #e8e8e8;
+    width: 80%;
+}
+.club__kits{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.club__kit{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 6px;
+}
+.club__kit h5{
+    background: none;
+    color: black;
+    font-size: 0.8rem;
+    text-align: -webkit-center;
+    margin-bottom: 6px;
+}
+.club__kit img{
+    width: 110px;
+    height: 100px;
+}
+.table{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    margin-top: 18px;
+    width: 100%;
+    bottom: 1px;
+}
+.table table{
+    width: 100%;
+    border-bottom: 1px solid #e3e3e3;
+    border-collapse: collapse;
+}
+.table thead{
+    background-color: #fbfbfb;
+    color: #6c6c6c;
+}
+.table th{
+    font-size: 1.0rem;
+    font-weight: 300;
+}
+tbody tr{
+    background-color: #0a4595;
+    color: white;
+}
+.th_pos,.th_club,.th_win,.th_draw,.th_lost{
+    padding-right: 0.3rem;
+    width: 10%;
+}
+.th_match{
+    width:15%;
+}
+.table td{
+    text-align: center;
+    font-weight: 200;
+    padding: .5rem;
+}
+.t_active{
+    display: flex;
+    animation: slide-down .3s ease-out;
+    -webkit-animation: slide-down .3s ease-out;
+}
 
-
+.t_hide{
+    display: none;
+    animation: slide-up .3s ease-in-out;
+}
 }
 @media (max-width:767px) and (min-width:481px){
     .team ul{

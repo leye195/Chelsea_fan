@@ -3,13 +3,14 @@ import './Team_section.css';
 import Player from './Player_section';
 import Management from './Management';
 import Season from './Season';
-import thumb from '../img/56033.jpg';
+//import thumb from '../img/56033.jpg';
 import * as service from '../services';
 const TeamSection=()=>{
     const [status,setStatus]=useState(0);//0: player , 1:management
     const [loading,setLoading]=useState(true);
     const [p_info,setInfo]=useState([]);
     const [staff_info,setStaffInfo]=useState([]);
+    const [seasons,setSeasonsInfo]=useState([]);
     const handleClick=useCallback((e)=>{
         const{target}=e;
         if(target.classList.contains("li_ma")&&!target.classList.contains("active")){
@@ -41,7 +42,13 @@ const TeamSection=()=>{
                     await service.get_staffs()
                 .then((resolve)=>{
                 const {data:{results}}=resolve;
-                setStaffInfo(results);})]
+                setStaffInfo(results);
+                }),
+                    await service.get_seasons()
+                .then((resolve)=>{
+                const {data:{results}}=resolve;
+                setSeasonsInfo(results);
+                })]
             );            
         }
         getInfo();
@@ -53,7 +60,7 @@ const TeamSection=()=>{
             <li className="li_ma" onClick={handleClick}>Management</li>
             <li className="li_pl active" onClick={handleClick}>Players</li>
         </ul>
-        {status===0?<Player players={p_info}/>:status===1?<Management staffs={staff_info}/>:<Season/>}
+        {status===0?<Player players={p_info}/>:status===1?<Management staffs={staff_info}/>:<Season seasons={seasons}/>}
     </div>)
 }
 export default TeamSection;
