@@ -5,6 +5,7 @@ const mapStyles = {
     width: '100%',
     height: '350px',
 };
+const useMarker=({})
 export class MapContainer extends Component {
     render() {
         return (
@@ -20,5 +21,6 @@ export class MapContainer extends Component {
     }
 }
 export default GoogleApiWrapper({
-    apiKey: 'AIzaSyCzHMcB7h8gXNOrphMorstUsv9m1qk7Rj0'
+    apiKey: '',
+    //language:''
   })(MapContainer);
