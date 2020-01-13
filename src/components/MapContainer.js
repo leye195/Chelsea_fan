@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
-import { Map, GoogleApiWrapper } from 'google-maps-react';
+import { Map, GoogleApiWrapper, Marker } from 'google-maps-react';
 const mapStyles = {
     position:'relative',
     width: '100%',
     height: '350px',
 };
-const useMarker=({})
 export class MapContainer extends Component {
     render() {
         return (
@@ -17,7 +16,12 @@ export class MapContainer extends Component {
          lat: 51.4817131,
          lng: -0.1914929
         }}
-      />);
+      >
+          <Marker position={{lat: 51.481616,
+         lng: -0.190946}}
+            draggable={false}
+         />
+      </Map>);
     }
 }
 export default GoogleApiWrapper({

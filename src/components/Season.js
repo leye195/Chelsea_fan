@@ -3,7 +3,15 @@ import {Link} from 'react-router-dom';
 const Season=(props)=>{
     const handleArrow=useCallback((e)=>{
         const {target}=e;
-        const __club=target.parentNode.nextSibling;
+        const __club=target.parentNode.parentNode.nextSibling;
+        const section=target.parentNode.parentNode.parentNode;
+        if(target.classList.contains("up")){
+            section.style.paddingBottom="0";
+        }else if(target.classList.contains("down")){
+            section.style.paddingBottom="40px";
+        }
+        target.classList.toggle("up");
+        target.classList.toggle("down");
         __club.classList.toggle("t_active");
         __club.classList.toggle("t_hide");
     },[]);
@@ -14,7 +22,7 @@ const Season=(props)=>{
                 <section className="season" key={item.season}>
                     <div>
                         <h4>{item.season}</h4>
-                        <span onClick={handleArrow}>()</span>
+                        <span><i className="arrow up" onClick={handleArrow}></i></span>
                     </div>
                     <div className="club__ t_active">
                         <div>
@@ -99,8 +107,7 @@ const Season=(props)=>{
                             </div>          
                         </div>
                     </div>
-                </section>
-            )
+                </section>)
         })
         return tags;
     }

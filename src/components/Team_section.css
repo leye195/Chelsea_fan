@@ -1,6 +1,6 @@
 @keyframes slide-down {
-    0% { opacity: 0; -webkit-transform: translateY(-2%); }   
-  100% { opacity: 1; -webkit-transform: translateY(0); }
+    0% { opacity: 0; -webkit-transform: translateY(-2%); padding-bottom: 0px; }   
+  100% { opacity: 1; -webkit-transform: translateY(0); padding-bottom: 40px; }
 }
 @media (min-width:768px){
 .team ul{
@@ -196,6 +196,11 @@
     bottom: 10px;
     border: 1px solid #6c6c6c;
     border-radius: 5px;
+    width: 100%;
+    text-align: center;
+}
+.more:hover{
+    background:#e3e3e3;
 }
 .more div{
     padding:5px;
@@ -251,6 +256,9 @@
     background-color: #fbfbfb;
     color: #6c6c6c;
 }
+.table thead tr{
+    box-shadow: 1px 3px 20px 1px #bdbdbd;
+}
 .table th{
     font-size: 1.0rem;
     font-weight: 300;
@@ -276,10 +284,8 @@ tbody tr{
     animation: slide-down .3s ease-out;
     -webkit-animation: slide-down .3s ease-out;
 }
-
 .t_hide{
     display: none;
-    animation: slide-up .3s ease-in-out;
 }
 }
 @media (max-width:767px) and (min-width:481px){
@@ -421,8 +427,164 @@ tbody tr{
         padding-top: 5px;
         padding-left: 5px;
     }
+    /*Season*/
+    .season{
+        border-bottom: 7px solid #dcdcdc;
+    }
+    .season>div:first-child{
+        position: relative;
+        background-color: #37003c;
+        box-shadow: inset -3px -1px 14px 1px #9c88af;
+        color: #fff;
+        line-height: 3rem;
+        /*margin-bottom: 3rem;*/
+        padding: 0.2rem 0.2rem;
+    }
+    .season>div:first-child h4{
+        margin-bottom: 0;
+        font-size: 0.8rem;
+    }
+    .seasons>div:first-child h4+span {
+        position: absolute;
+        right: 2%;
+        top: 0;
+        cursor: pointer;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    .club__{
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction:row;
+        background-color: white;
+    }
+    .club__>div:first-child{
+        padding-left: 4px;
+        padding-right: 4px;
+        width: 20%;
+    }
+    .club__stats{
+        display: flex;
+        flex-direction: column;
+    }
+    .club__stats dt{
+        color: #76766f;
+        font-size:0.7rem;
+    }
+    .club__stats dd{
+        margin: 0;
+        font-weight: 700;
+        margin-bottom: 5px;
+        font-size: 0.4rem;
+    }
+    .club__stats dd p{
+        margin:0;
+    }
+    .more{
+        cursor: pointer;
+        display: inline-block;
+        position: relative;
+        bottom: 10px;
+        border: 1px solid #6c6c6c;
+        border-radius: 5px;
+        width: 100%;
+        text-align: center;
+    }
+    .more:hover{
+        background:#e3e3e3;
+    }
+    .more div{
+        padding:5px;
+        color: #6c6c6c;
+        font-size: 0.75rem;
+    }
+    .club__kits__table{
+        position: relative;
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        border-left: 1px solid #e8e8e8;
+        width: 80%;
+    }
+    .club__kits{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+    .club__kit{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-top: 6px;
+    }
+    .club__kit h5{
+        background: none;
+        color: black;
+        font-size: 0.8rem;
+        text-align: -webkit-center;
+        margin-bottom: 6px;
+    }
+    .club__kit img{
+        width: 85px;
+        height: 90px;
+    }
+    .table{
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        margin-top: 18px;
+        width: 100%;
+        bottom: 1px;
+    }
+    .table table{
+        width: 100%;
+        border-bottom: 1px solid #e3e3e3;
+        border-collapse: collapse;
+    }
+    .table thead{
+        background-color: #fbfbfb;
+        color: #6c6c6c;
+    }
+    .table thead tr{
+        box-shadow: 1px 3px 20px 1px #bdbdbd;
+    }
+    .table th{
+        font-size: 0.7rem;
+        font-weight: 300;
+    }
+    tbody tr{
+        background-color: #0a4595;
+        color: white;
+        font-size: 0.7rem;
+    }
+    .th_pos,.th_club,.th_win,.th_draw,.th_lost{
+        padding-right: 0.3rem;
+        width: 10%;
+    }
+    .th_match{
+        width:15%;
+    }
+    .table td{
+        text-align: center;
+        font-weight: 200;
+        padding: .5rem;
+    }
+    .t_active{
+        display: flex;
+        animation: slide-down .3s ease-out;
+        -webkit-animation: slide-down .3s ease-out;
+    }
+    .t_hide{
+        display: none;
+    }
 }
 @media (min-width: 0px) and (max-width: 480px) {
+    .team{
+        padding-top:70px;
+    }
     .team ul{
         list-style: none;
         display: flex;
@@ -558,5 +720,160 @@ tbody tr{
         margin-top: 5px;
         padding-top: 5px;
         padding-left: 10px;
+    }
+    /*season*/
+    .season{
+        border-bottom: 7px solid #dcdcdc;
+        position: relative;
+        padding-bottom: 40px;
+    }
+    .season>div:first-child{
+        position: relative;
+        background-color: #37003c;
+        box-shadow: inset -3px -1px 14px 1px #9c88af;
+        color: #fff;
+        line-height: 3rem;
+        /*margin-bottom: 3rem;*/
+        padding: 0.2rem 0.2rem;
+    }
+    .season>div:first-child h4{
+        margin-bottom: 0;
+        font-size: 0.8rem;
+    }
+    .seasons>div:first-child h4+span {
+        position: absolute;
+        right: 2%;
+        top: 0;
+        cursor: pointer;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    .club__{
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction:row;
+        background-color: white;
+    }
+    .club__>div:first-child{
+        padding-left: 4px;
+        padding-right: 4px;
+        width: 40%;
+    }
+    .club__stats{
+        display: flex;
+        flex-direction: column;
+    }
+    .club__stats dt{
+        color: #76766f;
+        font-size:0.7rem;
+    }
+    .club__stats dd{
+        margin: 0;
+        font-weight: 700;
+        margin-bottom: 5px;
+        font-size: 0.4rem;
+    }
+    .club__stats dd p{
+        margin:0;
+    }
+    .more{
+        cursor: pointer;
+        display: inline-block;
+        position: relative;
+        bottom: 10px;
+        border: 1px solid #6c6c6c;
+        border-radius: 5px;
+        width: 100%;
+        text-align: center;
+    }
+    .more:hover{
+        background:#e3e3e3;
+    }
+    .more div{
+        padding:5px;
+        color: #6c6c6c;
+        font-size: 0.75rem;
+    }
+    .club__kits__table{
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        border-left: 1px solid #e8e8e8;
+        width: 60%;
+    }
+    .club__kits{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .club__kit{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-top: 0px;
+    }
+    .club__kit h5{
+        background: none;
+        color: black;
+        font-size: 0.5rem;
+        text-align: -webkit-center;
+        margin-bottom: 6px;
+    }
+    .club__kit img{
+        width: 42px;
+        height: 42px;
+    }
+    .table{
+        position: absolute;
+        /* display: flex; */
+        /* justify-content: center; */
+        /* margin-top: 18px; */
+        width: 100%;
+        bottom: 1px;
+        left: 0
+    }
+    .table table{
+        width: 100%;
+        border-bottom: 1px solid #e3e3e3;
+        border-collapse: collapse;
+    }
+    .table thead{
+        background-color: #fbfbfb;
+        color: #6c6c6c;
+    }
+    .table thead tr{
+        box-shadow: 1px 3px 20px 1px #bdbdbd;
+    }
+    .table th{
+        font-size: 0.7rem;
+        font-weight: 300;
+    }
+    tbody tr{
+        background-color: #0a4595;
+        color: white;
+        font-size: 0.7rem;
+    }
+    .th_pos,.th_club,.th_win,.th_draw,.th_lost{
+        padding-right: 0.3rem;
+        width: 10%;
+    }
+    .th_match{
+        width:15%;
+    }
+    .table td{
+        text-align: center;
+        font-weight: 200;
+        padding: .5rem;
+    }
+    .t_active{
+        display: flex;
+        animation: slide-down .5s ease-in-out;
+        -webkit-animation: slide-down .5s ease-in-out;
+    }
+    .t_hide{
+        display: none;
     }
 }

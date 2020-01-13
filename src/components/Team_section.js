@@ -6,28 +6,54 @@ import Season from './Season';
 //import thumb from '../img/56033.jpg';
 import * as service from '../services';
 const TeamSection=()=>{
-    const [status,setStatus]=useState(0);//0: player , 1:management
+    const [status,setStatus]=useState(0);//0: player , 1:management, 2:season
     const [loading,setLoading]=useState(true);
     const [p_info,setInfo]=useState([]);
     const [staff_info,setStaffInfo]=useState([]);
     const [seasons,setSeasonsInfo]=useState([]);
+    const saveStatus=(n)=>{
+        setStatus(n);
+        sessionStorage.setItem("status",n);
+    }
+    const loadStatus=()=>{
+        if(sessionStorage.getItem('status')){
+            const tmp=Number(sessionStorage.getItem('status'));
+            setStatus(tmp);
+            setActive(tmp);
+        }
+    }
+    const setActive=(tmp)=>{
+        if(tmp===0){
+            document.querySelector(".li_pl").classList.add("active");
+            document.querySelector(".li_ma").classList.remove("active");
+            document.querySelector(".li_season").classList.remove("active");
+        }else if(tmp===1){
+            document.querySelector(".li_ma").classList.add("active");
+            document.querySelector(".li_pl").classList.remove("active");
+            document.querySelector(".li_season").classList.remove("active");
+        }else if(tmp===2){
+            document.querySelector(".li_season").classList.add("active");
+            document.querySelector(".li_ma").classList.remove("active");
+            document.querySelector(".li_pl").classList.remove("active");
+        }
+    }
     const handleClick=useCallback((e)=>{
         const{target}=e;
         if(target.classList.contains("li_ma")&&!target.classList.contains("active")){
             target.classList.toggle("active");
             document.querySelector(".li_pl").classList.remove("active");
             document.querySelector(".li_season").classList.remove("active");
-            setStatus(1);
+            saveStatus(1)
         }else if(target.classList.contains("li_pl")&&!target.classList.contains("active")){
             target.classList.toggle("active");
             document.querySelector(".li_ma").classList.remove("active");
             document.querySelector(".li_season").classList.remove("active");
-            setStatus(0);
+            saveStatus(0)
         }else if(target.classList.contains("li_season")&&!target.classList.contains("active")){
             target.classList.toggle("active");
             document.querySelector(".li_ma").classList.remove("active");
             document.querySelector(".li_pl").classList.remove("active");
-            setStatus(2);
+            saveStatus(2)
         }
     },[]);
     useEffect(()=>{
@@ -52,6 +78,7 @@ const TeamSection=()=>{
             );            
         }
         getInfo();
+        loadStatus();
     },[]);
     return (
     <div>

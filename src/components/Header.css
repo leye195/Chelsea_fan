@@ -60,6 +60,9 @@ ul{
 */  
 @media (min-width: 0px) and (max-width: 480px) {
   header{
+    position: fixed;
+    width: 100%;
+    z-index: 1;
     background-color: #00009e;
     height: 75px;
     display: flex;

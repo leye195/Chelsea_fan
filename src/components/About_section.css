@@ -176,6 +176,9 @@ section h5{
 */
 
 @media (min-width: 0px) and (max-width: 480px) {
+    .history{
+        padding-top:70px;
+    }
     .basic_fact,.home_ground,.main_trophies,.time_line{
         padding:20px;
         margin-left: 10px;
