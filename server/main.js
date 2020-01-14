@@ -23,7 +23,7 @@ mongoose.connect("mongodb://localhost/chelsea_db",{useNewUrlParser: true });
 //import models
 const player=require('./models/players');
 const manager=require('./models/managers');
-
+const stats=require('./models/stats');
 const port=process.env.PORT || 3030;
-const route=require("./routes")(app,player,manager);
+const route=require("./routes")(app,player,manager,stats);
 http.createServer(app).listen(port);

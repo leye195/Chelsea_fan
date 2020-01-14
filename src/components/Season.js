@@ -19,7 +19,6 @@ const Season=(props)=>{
         const {seasons}=props;
         const s_id=[210,79,54,42,27,22,21,20,19,18,17,16,15,14,13,12,11,10,9,8,7,6,5,4,3,2,1];
         const tags=seasons.map((item,idx)=>{
-            //console.log(s_id[idx]);
             return(
                 <section className="season" key={item.season}>
                     <div>

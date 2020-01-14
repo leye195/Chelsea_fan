@@ -1,6 +1,6 @@
 import React,{useState,useEffect} from 'react';
 import * as services from '../services';
-import StatsContainer from '../components/statsContainer';
+import StatsContainer from '../components/StatsContainer';
 const Stats=(props)=>{
     const [stats,setStats]=useState({});
     const [loading,setLoading]=useState(true);

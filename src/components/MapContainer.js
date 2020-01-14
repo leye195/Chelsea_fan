@@ -15,8 +15,7 @@ export class MapContainer extends Component {
         initialCenter={{
          lat: 51.4817131,
          lng: -0.1914929
-        }}
-      >
+        }}>
           <Marker position={{lat: 51.481616,
          lng: -0.190946}}
             draggable={false}
