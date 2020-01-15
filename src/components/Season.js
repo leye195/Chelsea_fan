@@ -61,7 +61,8 @@ const Season=(props)=>{
                         </dl>
                         <div className="more">
                             <Link to={{pathname:"/stats",state:{
-                                _id:s_id[idx]
+                                _id:s_id[idx],
+                                season:item.season
                             }
                         }}>
                                 <div>more</div>

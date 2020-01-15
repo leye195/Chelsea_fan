@@ -1,3 +1,4 @@
+@media (min-width:800px){
 .stats__container ul li{
     position: relative;
     list-style: none;
@@ -7,6 +8,7 @@
 }
 .season_filter{
     margin: 10px;
+    margin-top: 80px;
     border: 1px solid #e3e3e3;
 }
 .season_filter>div{
@@ -50,6 +52,10 @@
     font-size: 1.0rem;
     width: 100% !important;
     cursor: pointer;
+    margin-bottom: 1rem !important;
+}
+.filter_ul li:hover{
+    font-weight: 500;
 }
 .filter_close{
     visibility: hidden;
@@ -131,4 +137,443 @@
 }
 .red_card{
     background: red;
+}
+}
+@media(max-width:799px) and (min-width:550px){
+    .stats__container ul{
+        display: block;
+    }
+    .stats__container ul li{
+        position: relative;
+        list-style: none;
+        width: 50%;
+        padding:5px;
+        margin-bottom: 2rem;
+        display: inline-flex !important;
+    }
+    .season_filter{
+        margin: 5px;
+        margin-top: 80px;
+        border: 1px solid #e3e3e3;
+    }
+    .season_filter>div{
+        margin: 10px;
+        padding: 10px;
+        display: flex;
+    }
+    .season_filter>div>div:nth-child(1){
+       padding-right: 20px;
+       border-right: 1px solid #e3e3e3;
+       cursor: pointer;
+       font-weight: 600;
+       text-overflow: ellipsis;
+       overflow: hidden;
+       white-space: nowrap;
+    }
+    .season_filter>div>div:nth-child(3){
+        flex-grow: 1;
+        padding-left: 5px;
+        text-align: end;
+        cursor: pointer;
+    }
+    .season_filter ul{
+        position: absolute;
+        top: 8.5rem;
+        left: 0px;
+        flex-direction: column;
+        padding: 12px;
+        overflow-y: scroll;
+        max-height: 20rem;
+        z-index: 70;
+        background: #fff;
+        transition: .1s;
+        transform-origin: top;
+        box-shadow: 0 1px 12px 0 rgba(0,0,0,.15);
+        border-radius: 0 0 2px 2px;
+        align-items: center;
+        border-top:3px solid #00009e ;
+    }
+    .filter_ul li{
+        font-size: 1.0rem;
+        width: 100% !important;
+        cursor: pointer;
+        margin-bottom: 0.5rem !important;
+        border-bottom: 1px solid #e3e3e3;
+    }
+    .filter_close{
+        visibility: hidden;
+        transform: scale(0);
+    }
+    .filter_open{
+        visibility: visible;
+        transform: scale(1);
+    }
+    .topStatsList{
+        padding:5px;
+        padding-left: 10px;
+        padding-right: 10px;
+        width: 550px;
+        margin: 0 auto;
+    }
+    .topStatsList+ul{
+        padding:0;
+        align-items: baseline;
+    }
+    .topStats{
+        display: inline-block;
+        width: 33.333%;
+        margin: 0;
+        text-align: center;
+        border-bottom: 1px solid #e3e3e3;
+        
+    }
+    .topStats:nth-child(1),.topStats:nth-child(4){
+        border-left: 1px solid #e3e3e3;
+    }
+    .topStats:nth-child(3),.topStats:nth-child(6){
+        border-right: 1px solid #e3e3e3;
+    }
+    .topStats:nth-child(2),.topStats:nth-child(5){
+        border-left: 1px solid #e3e3e3;
+        border-right: 1px solid #e3e3e3;;
+    }
+    .topStats:nth-child(1),.topStats:nth-child(2),.topStats:nth-child(3){
+        border-top: 3px solid #00009e;
+    }
+    .topStats p{
+        font-weight: 600;
+    }
+    .topStats p:nth-child(2){
+        font-size: 1.2rem;
+        margin-top: 0;
+        margin-bottom: 12px;
+    }
+    .stats{
+        border-top: 3px solid #00009e;
+        border-right: 1px solid #e8e8e8;
+        border-left: 1px solid #e8e8e8;
+        width: 100%;
+    }
+    .header_stat{
+        border-bottom: 1px solid #e8e8e8;
+        padding:10px;
+        font-weight: 700;
+    }
+    .normal_stat{
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        padding:10px;
+        border-bottom: 1px solid #e8e8e8;
+        font-weight: 100;
+        font-size: 0.5rem;
+    }
+    .normal_stat div:nth-child(2){
+        position: absolute;
+        right: 10px;
+    }
+    .yellow_card,.red_card{
+        display: inline-block;
+        width: 10px;
+        height: 15px;
+        box-shadow: 1px 2px 3px 0px darkgrey;
+    }
+    .yellow_card{
+        background: yellow;
+    }
+    .red_card{
+        background: red;
+    }
+}
+@media(max-width:549px) and (min-width:481px){
+    .stats__container ul{
+        display: block;
+    }
+    .stats__container ul li{
+        position: relative;
+        list-style: none;
+        width: 50%;
+        padding:5px;
+        margin-bottom: 2rem;
+        display: inline-flex !important;
+    }
+    .season_filter{
+        margin: 10px;
+        border: 1px solid #e3e3e3;
+    }
+    .season_filter>div{
+        margin: 10px;
+        padding: 10px;
+        display: flex;
+    }
+    .season_filter>div>div:nth-child(1){
+       padding-right: 20px;
+       border-right: 1px solid #e3e3e3;
+       cursor: pointer;
+       font-weight: 600;
+       text-overflow: ellipsis;
+       overflow: hidden;
+       white-space: nowrap;
+    }
+    .season_filter>div>div:nth-child(3){
+        flex-grow: 1;
+        padding-left: 5px;
+        text-align: end;
+        cursor: pointer;
+    }
+    .season_filter ul{
+        position: absolute;
+        top: 8.7rem;
+        left: 5px;
+        flex-direction: column;
+        padding: 12px;
+        overflow-y: scroll;
+        max-height: 20rem;
+        z-index: 70;
+        background: #fff;
+        transition: .1s;
+        transform-origin: top;
+        box-shadow: 0 1px 12px 0 rgba(0,0,0,.15);
+        border-radius: 0 0 2px 2px;
+        align-items: center;
+        border-top:3px solid #00009e ;
+    }
+    .filter_ul li{
+        font-size: 1.0rem;
+        width: 100% !important;
+        cursor: pointer;
+        margin-bottom: 1rem;
+    }
+    .filter_close{
+        visibility: hidden;
+        transform: scale(0);
+    }
+    .filter_open{
+        visibility: visible;
+        transform: scale(1);
+    }
+    .topStatsList{
+        padding:5px;
+        padding-left: 10px;
+        padding-right: 10px;
+        width: 100%;
+        margin: 0 auto;
+    }
+    .topStatsList+ul{
+        padding:0;
+        align-items: baseline;
+    }
+    .topStats{
+        display: inline-block;
+        width: 33.333%;
+        margin: 0;
+        text-align: center;
+        border-bottom: 1px solid #e3e3e3;
+    }
+    .topStats:nth-child(1),.topStats:nth-child(4){
+        border-left: 1px solid #e3e3e3;
+    }
+    .topStats:nth-child(3),.topStats:nth-child(6){
+        border-right: 1px solid #e3e3e3;
+    }
+    .topStats:nth-child(2),.topStats:nth-child(5){
+        border-left: 1px solid #e3e3e3;
+        border-right: 1px solid #e3e3e3;;
+    }
+    .topStats:nth-child(1),.topStats:nth-child(2),.topStats:nth-child(3){
+        border-top: 3px solid #00009e;
+    }
+    .topStats p{
+        font-weight: 600;
+        font-size: 0.7rem;
+    }
+    .topStats p:nth-child(2){
+        font-size: 1.0rem;
+        margin-top: 0;
+        margin-bottom: 12px;
+    }
+    .stats{
+        border-top: 3px solid #00009e;
+        border-right: 1px solid #e8e8e8;
+        border-left: 1px solid #e8e8e8;
+        width: 100%;
+    }
+    .header_stat{
+        border-bottom: 1px solid #e8e8e8;
+        padding:10px;
+        font-weight: 700;
+    }
+    .normal_stat{
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        padding:10px;
+        border-bottom: 1px solid #e8e8e8;
+        font-weight: 100;
+        font-size: 0.5rem;
+    }
+    .normal_stat div:nth-child(2){
+        position: absolute;
+        right: 10px;
+    }
+    .yellow_card,.red_card{
+        display: inline-block;
+        width: 10px;
+        height: 15px;
+        box-shadow: 1px 2px 3px 0px darkgrey;
+    }
+    .yellow_card{
+        background: yellow;
+    }
+    .red_card{
+        background: red;
+    }
+}
+@media(max-width:480px) and (min-width:0px){
+    .stats__container ul{
+        display: block;
+    }
+    .stats__container ul li{
+        position: relative;
+        list-style: none;
+        padding:5px;
+    }
+    .season_filter{
+        margin: 5px;
+        border: 1px solid #e3e3e3;
+        margin-top: 80px;
+    }
+    .season_filter>div{
+        margin: 10px;
+        padding: 5px;
+        display: flex;
+        font-size: 0.8rem;
+    }
+    .season_filter>div>div:nth-child(1){
+       padding-right: 20px;
+       border-right: 1px solid #e3e3e3;
+       cursor: pointer;
+       font-weight: 600;
+       text-overflow: ellipsis;
+       overflow: hidden;
+       white-space: nowrap;
+    }
+    .season_filter>div>div:nth-child(3){
+        flex-grow: 1;
+        padding-left: 5px;
+        text-align: end;
+        cursor: pointer;
+    }
+    .season_filter ul{
+        position: absolute;
+        top: 7.5rem;
+        left: 0;
+        flex-direction: column;
+        padding-top: 5px;
+        overflow-y: auto;
+        max-height: 20rem;
+        z-index: 70;
+        background: #fff;
+        transition: .1s;
+        transform-origin: top;
+        box-shadow: 0 1px 12px 0 rgba(0,0,0,.15);
+        border-radius: 0 0 2px 2px;
+        align-items: center;
+        border-top:3px solid #00009e ;
+    }
+    .season_filter ul li{
+        border-bottom: 1px solid #e3e3e3;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    .filter_ul li{
+        font-size: 0.75rem;
+        width: 100% !important;
+        cursor: pointer;
+        display: inline-flex;
+    }
+    .filter_close{
+        visibility: hidden;
+        transform: scale(0);
+    }
+    .filter_open{
+        visibility: visible;
+        transform: scale(1);
+    }
+    .topStatsList{
+        padding:5px;
+        padding-left: 10px;
+        padding-right: 10px;
+        width: 100%;
+        margin: 0 auto;
+    }
+    .topStatsList+ul{
+        padding:0;
+        align-items: baseline;
+    }
+    .topStats{
+        display: inline-block;
+        width: 33.333%;
+        margin: 0;
+        text-align: center;
+        border-bottom: 1px solid #e3e3e3;
+    }
+    .topStats:nth-child(1),.topStats:nth-child(4){
+        border-left: 1px solid #e3e3e3;
+    }
+    .topStats:nth-child(3),.topStats:nth-child(6){
+        border-right: 1px solid #e3e3e3;
+    }
+    .topStats:nth-child(2),.topStats:nth-child(5){
+        border-left: 1px solid #e3e3e3;
+        border-right: 1px solid #e3e3e3;;
+    }
+    .topStats:nth-child(1),.topStats:nth-child(2),.topStats:nth-child(3){
+        border-top: 3px solid #00009e;
+    }
+    .topStats p{
+        font-weight: 600;
+        font-size: 0.7rem;
+    }
+    .topStats p:nth-child(2){
+        font-size: 1.0rem;
+        margin-top: 0;
+        margin-bottom: 12px;
+    }
+    .stats{
+        border-top: 3px solid #00009e;
+        border-right: 1px solid #e8e8e8;
+        border-left: 1px solid #e8e8e8;
+        width: 100%;
+    }
+    .header_stat{
+        border-bottom: 1px solid #e8e8e8;
+        padding:10px;
+        font-weight: 700;
+    }
+    .normal_stat{
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        padding:10px;
+        border-bottom: 1px solid #e8e8e8;
+        font-weight: 100;
+        font-size: 0.5rem;
+    }
+    .normal_stat div:nth-child(2){
+        position: absolute;
+        right: 10px;
+    }
+    .yellow_card,.red_card{
+        display: inline-block;
+        width: 10px;
+        height: 15px;
+        box-shadow: 1px 2px 3px 0px darkgrey;
+    }
+    .yellow_card{
+        background: yellow;
+    }
+    .red_card{
+        background: red;
+    }
 }

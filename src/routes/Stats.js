@@ -1,8 +1,10 @@
 import React,{useState,useEffect} from 'react';
 import * as services from '../services';
 import StatsContainer from '../components/StatsContainer';
+import Loading from '../components/Loading';
 const Stats=(props)=>{
     const [stats,setStats]=useState({});
+    //const [season,setSeason]=useState({});
     const [loading,setLoading]=useState(true);
     useEffect(()=>{
         async function getStats(){
@@ -21,7 +23,7 @@ const Stats=(props)=>{
     },[props]); 
     return(
         <div>
-            {loading!==true?<StatsContainer stats={stats}/>:<div>Loading</div>}
+            {loading!==true?<StatsContainer stats={stats}/>:<Loading/>}
         </div>
     );
 }

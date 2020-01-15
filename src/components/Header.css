@@ -4,11 +4,15 @@ Screen = 481px to higher resolution desktops
 */
 @media (min-width:481px){
 header{
+    position: fixed;
+    width: 100%;
+    z-index: 800;
     background-color: #00009e;
     height: 75px;
     display: flex;
     align-items: center;
     border-bottom: 3px solid white;
+    top: 0;
 }
 header .logo{
     width: 90px;
@@ -60,14 +64,15 @@ ul{
 */  
 @media (min-width: 0px) and (max-width: 480px) {
   header{
+    z-index: 800;
     position: fixed;
     width: 100%;
-    z-index: 1;
     background-color: #00009e;
     height: 75px;
     display: flex;
     align-items: center;
     border-bottom: 3px solid white;
+    top: 0;
 }
 header .logo{
     width: 80px;

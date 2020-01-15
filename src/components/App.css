@@ -38,6 +38,7 @@ h3{
 }
 .history,.team{
   background: #00009e;
+  padding-top: 70px;
 }
 .history h3,.team h3{
   padding-top:20px;

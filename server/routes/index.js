@@ -5,7 +5,7 @@ module.exports=function (app,Player,Manager,Stats){
     app.get("/players",(req,res)=>{
         let player=Player;
         player.find({},(err,data)=>{
-            console.log(data);
+            //console.log(data);
             if(err)return res.status(500).json({error:1,msg:"Database Failure"});
             res.json({error:0,results:data});
         })
@@ -13,7 +13,7 @@ module.exports=function (app,Player,Manager,Stats){
     app.get("/managers",(req,res)=>{
         let manager=Manager;
         manager.find((err,data)=>{
-            console.log(data);
+            //console.log(data);
             if(err)res.status(500).json({error:1,msg:"Database Failure"});
             return res.json({error:0,results:data});
         })
@@ -216,8 +216,9 @@ module.exports=function (app,Player,Manager,Stats){
               setTimeout( resolve, timeout );
             });
         }
-        if(_id===-1)
-            _id=0;
+        //if(Number(_id)===-1)
+          //  _id=100;
+        //console.log(_id);
         Stats.findOne({s_id:_id},(err,data)=>{
             if(err)res.status(500).json({error:1,msg:"DB Error"});
             if(!data){
@@ -246,12 +247,12 @@ module.exports=function (app,Player,Manager,Stats){
                             "goalsConceded":gc,
                             "cleanSheets":c
                         }
-                        stats.played=played;
-                        stats.wins=w;
-                        stats.losses=l;
-                        stats.goals=g;
-                        stats.goalsConceded=gc;
-                        stats.cleanSheets=c;
+                        stats.played=played.trim();
+                        stats.wins=w.trim();
+                        stats.losses=l.trim();
+                        stats.goals=g.trim();
+                        stats.goalsConceded=gc.trim();
+                        stats.cleanSheets=c.trim();
                     });
                     $statsLists.each((idx,ele)=>{
                         const header=$(ele).find("div.headerStat span").text();
@@ -267,25 +268,25 @@ module.exports=function (app,Player,Manager,Stats){
                             result={
                                 ...result,
                                 "attack":{
-                                    "goals":goals,
-                                    "goalPerMatch":goalPerMatch,
-                                    "shots":shots,
-                                    "shotsOnTar":shotsOnTar,
-                                    "shootAccurancy":shootAccur,
-                                    "penaltiesGoal":penaltiesGoal,
-                                    "bigChances":bigChances,
-                                    "hitWoodWork":hitWoodWork
+                                    "goals":goals.trim(),
+                                    "goalPerMatch":goalPerMatch.trim(),
+                                    "shots":shots.trim(),
+                                    "shotsOnTar":shotsOnTar.trim(),
+                                    "shootAccurancy":shootAccur.trim(),
+                                    "penaltiesGoal":penaltiesGoal.trim(),
+                                    "bigChances":bigChances.trim(),
+                                    "hitWoodWork":hitWoodWork.trim()
                                 }
                             }
                             stats.attack={
-                                "goals":goals,
-                                "goalPerMatch":goalPerMatch,
-                                "shots":shots,
-                                "shotsOnTar":shotsOnTar,
-                                "shootAccurancy":shootAccur,
-                                "penaltiesGoal":penaltiesGoal,
-                                "bigChances":bigChances,
-                                "hitWoodWork":hitWoodWork
+                                "goals":goals.trim(),
+                                "goalPerMatch":goalPerMatch.trim(),
+                                "shots":shots.trim(),
+                                "shotsOnTar":shotsOnTar.trim(),
+                                "shootAccurancy":shootAccur.trim(),
+                                "penaltiesGoal":penaltiesGoal.trim(),
+                                "bigChances":bigChances.trim(),
+                                "hitWoodWork":hitWoodWork.trim()
                             }
                         }else if(header==="Team Play"){
                             const passes=$(ele).find("div:nth-child(2) > span > span").text();
@@ -295,7 +296,7 @@ module.exports=function (app,Player,Manager,Stats){
                             const c_accur=$(ele).find("div:nth-child(6) > span > span").text();
                             result={
                                 ...result,
-                                "teamPlay":{
+                                "teamplay":{
                                     "passes":passes,
                                     "passPerMatch":perMatch,
                                     "passAccuracy":accur,
@@ -304,11 +305,11 @@ module.exports=function (app,Player,Manager,Stats){
                                 }
                             }
                             stats.teamplay={
-                                "passes":passes,
-                                "passPerMatch":perMatch,
-                                "passAccuracy":accur,
-                                "crosses":crosses,
-                                "c_accur":c_accur
+                                "passes":passes.trim(),
+                                "passPerMatch":perMatch.trim(),
+                                "passAccuracy":accur.trim(),
+                                "crosses":crosses.trim(),
+                                "c_accur":c_accur.trim()
                             }
                         }else if(header==="Defence"){
                             const cleanSheets=$(ele).find("div:nth-child(2) > span > span").text();
@@ -326,33 +327,33 @@ module.exports=function (app,Player,Manager,Stats){
                             result={
                                 ...result,
                                 "defence":{
-                                    "cleanSheets":cleanSheets,
-                                    "goalConceded":goalsConceded,
-                                    "goalConcededPer":goalsConcededPer,
-                                    "saves":saves,
-                                    "tackles":tackles,
-                                    "tackleSuccess":tackleSuccess,
-                                    "blockedShots":blockedShots,
-                                    "interception":interceptions,
-                                    "clearances":clearances,
-                                    "headClearances":headClear,
-                                    "arialBattles":arialBattles,
-                                    "ownGoals":ownGoal
+                                    "cleanSheets":cleanSheets.trim(),
+                                    "goalConceded":goalsConceded.trim(),
+                                    "goalConcededPer":goalsConcededPer.trim(),
+                                    "saves":saves.trim(),
+                                    "tackles":tackles.trim(),
+                                    "tackleSuccess":tackleSuccess.trim(),
+                                    "blockedShots":blockedShots.trim(),
+                                    "interception":interceptions.trim(),
+                                    "clearances":clearances.trim(),
+                                    "headClearances":headClear.trim(),
+                                    "arialBattles":arialBattles.trim(),
+                                    "ownGoals":ownGoal.trim()
                                 }
                             }
                             stats.defence={
-                                "cleanSheets":cleanSheets,
-                                "goalConceded":goalsConceded,
-                                "goalConcededPer":goalsConcededPer,
-                                "saves":saves,
-                                "tackles":tackles,
-                                "tackleSuccess":tackleSuccess,
-                                "blockedShots":blockedShots,
-                                "interception":interceptions,
-                                "clearances":clearances,
-                                "headClearances":headClear,
-                                "arialBattles":arialBattles,
-                                "ownGoals":ownGoal
+                                "cleanSheets":cleanSheets.trim(),
+                                "goalConceded":goalsConceded.trim(),
+                                "goalConcededPer":goalsConcededPer.trim(),
+                                "saves":saves.trim(),
+                                "tackles":tackles.trim(),
+                                "tackleSuccess":tackleSuccess.trim(),
+                                "blockedShots":blockedShots.trim(),
+                                "interception":interceptions.trim(),
+                                "clearances":clearances.trim(),
+                                "headClearances":headClear.trim(),
+                                "arialBattles":arialBattles.trim(),
+                                "ownGoals":ownGoal.trim()
                             }
                         }else if(header==="Discipline"){
                             const yellow=$(ele).find("div:nth-child(2) > span > span").text();
@@ -369,17 +370,19 @@ module.exports=function (app,Player,Manager,Stats){
                                 }
                             }
                             stats.discipline={
-                                "yellow":yellow,
-                                "red":red,
-                                "fouls":foul,
-                                "offsides":offside
+                                "yellow":yellow.trim(),
+                                "red":red.trim(),
+                                "fouls":foul.trim(),
+                                "offsides":offside.trim()
                             }
                         }
                     })
-                    stats.save((error)=>{
-                        if(error) res.json({error:2,results:{}});
+                    console.log(stats)
+                    stats.save((err)=>{
+                        if(err) res.json({error:2,results:{},msg:"Error:"+String(err)});
                         res.json({error:0,results:result,msg:"Save Success"});
                     })
+                    //res.json({error:0,results:result});
                 });
             }else{
                 res.json({error:0,results:data,msg:"DB"});

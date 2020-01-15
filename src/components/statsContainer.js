@@ -3,6 +3,7 @@ import * as services from '../services';
 import '../components/Stats.css';
 const StatsContainer=(props)=>{
     const[stats,setStats]=useState(props.stats);
+    const[season,setSeason]=useState(props.season);
     const get_topStats=()=>{
         const{played,wins,losses,goals,goalsConceded,cleanSheets}=stats;
         return(
@@ -36,12 +37,6 @@ const StatsContainer=(props)=>{
     }
     const attackStats=()=>{
         const{attack}=stats;
-        //const attackInfo={}
-        /*for(let i=0;i<stats.length;i++){
-            if(stats[i].name==="goals" || stats[i]===""){
-
-            }
-        }*/
         return(
             <li>
                 <div className="stats attack">
@@ -101,7 +96,7 @@ const StatsContainer=(props)=>{
         )
     }
     const teamPlayStats=()=>{
-        const{teamPlay}=stats;
+        const{teamplay}=stats;
         return(
             <li>
                 <div className="stats teamplay">
@@ -110,23 +105,23 @@ const StatsContainer=(props)=>{
                     </div>
                     <div className="normal_stat">
                         <div>Passes</div>
-                        <div>{teamPlay.passes}</div>
+                        <div>{teamplay.passes}</div>
                     </div>
                     <div className="normal_stat">
                         <div>Pass per match</div>
-                        <div>{teamPlay.passPerMatch}</div>
+                        <div>{teamplay.passPerMatch}</div>
                     </div>
                     <div className="normal_stat">
                         <div>Pass accurancy %</div>
-                        <div>{teamPlay.passAccurancy}</div>
+                        <div>{teamplay.passAccuracy}</div>
                     </div>
                     <div className="normal_stat">
                         <div>Crosses</div>
-                        <div>{teamPlay.crosses}</div>
+                        <div>{teamplay.crosses}</div>
                     </div>
                     <div className="normal_stat">
                         <div>Cross accuracy %</div>
-                        <div>{teamPlay.c_accur}</div>
+                        <div>{teamplay.c_accur}</div>
                     </div>
                 </div>
             </li>
@@ -258,24 +253,26 @@ const StatsContainer=(props)=>{
     }
     const handleSelect=(e)=>{
         const{target}=e;
-        const current=document.querySelector(".current");
-        current.innerText=target.innerText;
-        closeFilter();
-        console.log(target.id);
+        setSeason(target.innerText);
         get_statsInfo(target.id);
+        //saveSid(stats,season)
+        closeFilter();
     }
     const handleReset=(e)=>{
         const current=document.querySelector(".current");
-        current.innerText="All Season";
+        current.innerText="All Seasons";
+        get_statsInfo(-1);
+        saveSid(-1,"All Seasons");
         closeFilter();
+    }
+    const saveSid=(s_id,season)=>{
+        sessionStorage.setItem("key",{s_id,season});
     }
     async function get_statsInfo(id){
         await services.get_stats(id)
         .then((resolve)=>{
             const {data:{results}}=resolve;
             setStats(results);
-            console.log(stats);
-            console.log(results);
         })
     }
     return (
@@ -283,7 +280,7 @@ const StatsContainer=(props)=>{
             <section className="season_filter">
                 <div>
                     <div className="current" onClick={handleFilter}>
-                        All Seasons
+                        {season?season:"All Seasons"}
                     </div>
                     {filter_list()}
                     <div onClick={handleReset}>
@@ -301,5 +298,4 @@ const StatsContainer=(props)=>{
         </div>
     );
 }
-
 export default StatsContainer;

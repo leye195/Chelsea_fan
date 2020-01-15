@@ -3,7 +3,7 @@ import './Team_section.css';
 import Player from './Player_section';
 import Management from './Management';
 import Season from './Season';
-//import thumb from '../img/56033.jpg';
+import Loading from './Loading';
 import * as service from '../services';
 const TeamSection=()=>{
     const [status,setStatus]=useState(0);//0: player , 1:management, 2:season
@@ -15,13 +15,13 @@ const TeamSection=()=>{
         setStatus(n);
         sessionStorage.setItem("status",n);
     }
-    const loadStatus=()=>{
+    const loadStatus=useCallback(e=>{
         if(sessionStorage.getItem('status')){
             const tmp=Number(sessionStorage.getItem('status'));
             setStatus(tmp);
             setActive(tmp);
         }
-    }
+    },[]);
     const setActive=(tmp)=>{
         if(tmp===0){
             document.querySelector(".li_pl").classList.add("active");
@@ -58,6 +58,7 @@ const TeamSection=()=>{
     },[]);
     useEffect(()=>{
         async function getInfo(){
+            setLoading(true);
             Promise.all(
                 [await service.get_player()
                 .then((resolve)=>{
@@ -75,11 +76,12 @@ const TeamSection=()=>{
                 const {data:{results}}=resolve;
                 setSeasonsInfo(results);
                 })]
-            );            
+            );
+            setLoading(false);        
         }
         getInfo();
         loadStatus();
-    },[]);
+    },[loadStatus]);
     return (
     <div>
         <ul className="team_ul">
@@ -87,7 +89,7 @@ const TeamSection=()=>{
             <li className="li_ma" onClick={handleClick}>Management</li>
             <li className="li_pl active" onClick={handleClick}>Players</li>
         </ul>
-        {status===0?<Player players={p_info}/>:status===1?<Management staffs={staff_info}/>:<Season seasons={seasons}/>}
+        {loading===true?<Loading/>:status===0?<Player players={p_info}/>:status===1?<Management staffs={staff_info}/>:<Season seasons={seasons}/>}
     </div>)
 }
 export default TeamSection;
