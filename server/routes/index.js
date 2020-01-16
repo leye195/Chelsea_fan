@@ -1,7 +1,7 @@
-const cheerio = require('cheerio');
-const request = require('request');
-const puppeteer = require('puppeteer');
-module.exports=function (app,Player,Manager,Stats){
+import cheerio from 'cheerio';
+import request from 'request';
+import puppeteer from 'puppeteer';
+export default function (app,Player,Manager,Stats){
     app.get("/players",(req,res)=>{
         let player=Player;
         player.find({},(err,data)=>{

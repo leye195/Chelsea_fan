@@ -1,4 +1,4 @@
-let mongoose=require('mongoose');
+import mongoose from 'mongoose';
 let Schema=mongoose.Schema;
 let statSchema=new Schema({
     s_id:Number,
@@ -13,4 +13,4 @@ let statSchema=new Schema({
     defence:Schema.Types.Mixed,
     discipline:Schema.Types.Mixed
 })
-module.exports = mongoose.model('stat',statSchema,'stat');    
+export default mongoose.model('stat',statSchema,'stat');    

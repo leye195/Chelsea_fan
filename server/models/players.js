@@ -1,4 +1,4 @@
-let mongoose=require('mongoose');
+import mongoose from 'mongoose';
 let Schema=mongoose.Schema;
 let playerSchema=new Schema({
     name:String,
@@ -7,5 +7,4 @@ let playerSchema=new Schema({
     position:String,
     img:String //ex) http://localhost:3030/static/img/players/goalkeeper/p1.png
 })
-
-module.exports = mongoose.model('player',playerSchema,'player');
+export default mongoose.model('player',playerSchema,'player');

@@ -81,6 +81,9 @@ const TeamSection=()=>{
         }
         getInfo();
         loadStatus();
+        return()=>{
+            saveStatus(0);
+        }
     },[loadStatus]);
     return (
     <div>

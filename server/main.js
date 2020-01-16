@@ -1,8 +1,13 @@
-const http=require("http"),express=require("express");
-const bodyparser=require('body-parser');
-const helmet=require("helmet");
-const cor=require("cors");
-let mongoose=require('mongoose');
+import http from 'http';
+import express from 'express';
+import bodyparser from 'body-parser';
+import helmet from 'helmet';
+import cor from 'cors';
+import mongoose from 'mongoose';
+import player from './models/players';
+import manager from './models/managers';
+import stats from './models/stats';
+import route from './routes';
 let db=mongoose.connection;
 const app=express();
 
@@ -21,9 +26,7 @@ db.once('open',()=>{
 mongoose.connect("mongodb://localhost/chelsea_db",{useNewUrlParser: true });
 
 //import models
-const player=require('./models/players');
-const manager=require('./models/managers');
-const stats=require('./models/stats');
-const port=process.env.PORT || 3030;
-const route=require("./routes")(app,player,manager,stats);
-http.createServer(app).listen(port);
+
+const PORT=process.env.PORT || 3030;
+route(app,player,manager,stats);
+http.createServer(app).listen(PORT);
