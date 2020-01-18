@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { Map, GoogleApiWrapper, Marker } from 'google-maps-react';
+import dotenv from 'dotenv';
+dotenv.config();
 const mapStyles = {
     position:'relative',
     width: '100%',
@@ -24,6 +26,6 @@ export class MapContainer extends Component {
     }
 }
 export default GoogleApiWrapper({
-    apiKey: 'AIzaSyCzHMcB7h8gXNOrphMorstUsv9m1qk7Rj0',
+    apiKey: process.env.GOOGLE_MAP_API,
     //language:''
   })(MapContainer);
