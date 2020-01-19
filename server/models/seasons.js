@@ -1,19 +1,19 @@
 import mongoose from 'mongoose';
 let Schema=mongoose.Schema;
 let seasonSchema=new Schema({
-    season:String,
-    rank:String,
-    matches:Number,
-    won:Number,
-    draw:Number,
-    lost:Number,
-    gd:String,
-    points:Number,
-    managers:Array,
-    topScorer:Array,
-    mostAppear:Array,
-    biggestWin:String,
-    harvestDefeat:String,
-    kits:Array
+    season:{type:String,required:"season is required"},
+    rank:{type:String,required:"rank is required"},
+    matches:{type:Number,required:"matches is required"},
+    won:{type:Number,default:0},
+    draw:{type:Number,default:0},
+    lost:{type:Number,default:0},
+    gd:{type:String},
+    points:{type:Number,default:0},
+    managers:[],
+    topScorer:[],
+    mostAppear:[],
+    biggestWin:[],
+    harvestDefeat:{type:String},
+    kits:[]
 });
-module.exports = mongoose.model('season',seasonSchema,'season');
+export default mongoose.model('Season',seasonSchema);

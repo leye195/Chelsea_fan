@@ -2,6 +2,7 @@ import React,{useEffect} from 'react';
 import b1 from '../img/stamfordbridge.jpeg';
 import b2 from '../img/fa_cup.jpeg';
 import b3 from '../img/young.jpeg';
+import SnsSection from '../components/snsSection';
 const Home=(props)=>{
   useEffect(()=>{
     const imgs=[b1,b2,b3];
@@ -19,10 +20,13 @@ const Home=(props)=>{
     }    
   });
     return (
-    <div className="bg">
-      <p className="slider_p">
-        Keep the Blue Flag Flying High
-      </p>
+    <div>
+      <div className="bg">
+        <p className="slider_p">
+          Keep the Blue Flag Flying High
+        </p>
+      </div>
+      <SnsSection/>
     </div>)
 }
 export default Home;

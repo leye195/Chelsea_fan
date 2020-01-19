@@ -7,6 +7,15 @@ const Stats=(props)=>{
     //const [season,setSeason]=useState({});
     const [loading,setLoading]=useState(true);
     useEffect(()=>{
+        if(props.location.pathname==="/stats"){
+            const q=document.querySelectorAll("header ul li");
+            for (const iter of q) {
+              if(iter.classList.contains("_stat"))
+                iter.querySelector("a").classList.add("header_active");
+              else
+                iter.querySelector("a").classList.remove("header_active");
+            }
+          }  
         async function getStats(){
             let _id=-1;
             setLoading(true);

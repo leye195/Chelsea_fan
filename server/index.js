@@ -1,114 +1,140 @@
+import express from 'express';
 import cheerio from 'cheerio';
 import request from 'request';
 import puppeteer from 'puppeteer';
-export default function (app,Player,Manager,Stats){
-    app.get("/players",(req,res)=>{
+import Player from './models/players';
+import Manager from './models/managers';
+import Stats from './models/stats';
+import Season from './models/seasons';
+import routes from './routes';
+const globalRouter=express.Router();
+globalRouter.get(routes.players,async(req,res)=>{
         let player=Player;
-        player.find({},(err,data)=>{
+        await player.find({},(err,data)=>{
             if(err)return res.status(500).json({error:1,msg:"Database Failure"});
             res.json({error:0,results:data});
         })
-    });
-    app.get("/managers",(req,res)=>{
-        let manager=Manager;
-        manager.find((err,data)=>{
-            if(err)res.status(500).json({error:1,msg:"Database Failure"});
-            return res.json({error:0,results:data});
-        })
-    });
+});
+globalRouter.get(routes.mangagers,async(req,res)=>{
+    let manager=Manager;
+    await manager.find((err,data)=>{
+        if(err)res.status(500).json({error:1,msg:"Database Failure"});
+        return res.json({error:0,results:data});
+    })
+});
 /*
     Chelsea All Season record API
     Data Crawled from https://www.premierleague.com
 */
-    app.get("/seasons",(req,res)=>{
-        const url="https://www.premierleague.com/clubs/4/Chelsea/season-history";
-        request(url,(error,request,body)=>{
-            let result=[];
-            const $=cheerio.load(body);
-            const $descrip=$("div.club-archive__description-list");
-            const $season=$('h2.club-archive__heading-main');
-            const $kits=$("div.club-archive__kits");
-            const $team=$("div.club-archive__league-pos > div > div > div > div > table > tbody > tr.row--highlight");
-            $season.each((idx,ele)=>{
-                const season=$(ele).text();
-                result[idx]={
-                    "season":season
-                };
-            });
-            $team.each((idx,ele)=>{
-                const matches=$(ele).find("td:nth-child(3)").text();
+globalRouter.get(routes.seasons,(req,res)=>{
+    const url="https://www.premierleague.com/clubs/4/Chelsea/season-history";
+    request(url,(error,request,body)=>{
+        let result=[];
+        const $=cheerio.load(body);
+        const $descrip=$("div.club-archive__description-list");
+        const $season=$('h2.club-archive__heading-main');
+        const $kits=$("div.club-archive__kits");
+        const $team=$("div.club-archive__league-pos > div > div > div > div > table > tbody > tr.row--highlight");
+        $season.each((idx,ele)=>{
+            const season=$(ele).text();
+            result[idx]={
+                "season":season
+            };
+        });
+        $team.each((idx,ele)=>{
+            const matches=$(ele).find("td:nth-child(3)").text();
                 //tr.row--highlight > td:nth-child(3)
-                const won=$(ele).find("td:nth-child(4)").text();
-                const draw=$(ele).find("td:nth-child(5)").text();
-                const lost=$(ele).find("td:nth-child(6)").text();
-                const gd=$(ele).find("td:nth-child(7)").text();
-                const points=$(ele).find("td.points").text();
-                result[idx]={
-                    ...result[idx],
-                    "matches":matches,
-                    "won":won,
-                    "draw":draw,
-                    "lost":lost,
-                    "gd":gd,
-                    "points":points
-                };
-            })
-            $descrip.each((idx,ele)=>{
-                const rank=$(ele).find("dl:nth-child(1)> dd").text();
-                const $manager=$(ele).find("dl:nth-child(2)> dd p");
-                const $top_scorer=$(ele).find("dl:nth-child(3)> dd p");
-                const $most_appear=$(ele).find("dl:nth-child(4)> dd p");
-                const biggest_win=$(ele).find("dl:nth-child(5) > dd").text();
-                const harvest_defeat=$(ele).find("dl:nth-child(6) > dd").text();
-                const managers=[],top=[],most=[];
-                $manager.each((idx,ele)=>{
-                    managers.push($(ele).text());
-                });
-                $top_scorer.each((idx,ele)=>{
-                    top.push($(ele).text());
-                })
-                $most_appear.each((idx,ele)=>{
-                    most.push($(ele).text());
-                })
-                result[idx]={
-                    ...result[idx],
-                    "rank":rank,
-                    "managers":managers,
-                    "topScorer":top,
-                    "mostAppearance":most,
-                    "biggestWin":biggest_win,
-                    "havestDefeat":harvest_defeat
-                };
-            });
-            $kits.each((idx,ele)=>{
-                const home=$(ele).find("div:nth-child(1) > picture > img").attr("src");
-                const away=$(ele).find("div:nth-child(2) > picture > img").attr("src");
-                const third=$(ele).find("div:nth-child(3) > picture > img").attr("src");
-                result[idx]={
-                    ...result[idx],
-                    "kits":[home,away,third]
-                };
-            });
-            res.json({error:0,results:result});
+            const won=$(ele).find("td:nth-child(4)").text();
+            const draw=$(ele).find("td:nth-child(5)").text();
+            const lost=$(ele).find("td:nth-child(6)").text();
+            const gd=$(ele).find("td:nth-child(7)").text();
+            const points=$(ele).find("td.points").text();
+            result[idx]={
+                ...result[idx],
+                "matches":matches,
+                "won":won,
+                "draw":draw,
+                "lost":lost,
+                "gd":gd,
+                "points":points
+            };
         })
-    });
-    app.get("/season/stats/:id",(req,res)=>{
+        $descrip.each((idx,ele)=>{
+            const rank=$(ele).find("dl:nth-child(1)> dd").text();
+            const $manager=$(ele).find("dl:nth-child(2)> dd p");
+            const $top_scorer=$(ele).find("dl:nth-child(3)> dd p");
+            const $most_appear=$(ele).find("dl:nth-child(4)> dd p");
+            const biggest_win=$(ele).find("dl:nth-child(5) > dd").text();
+            const harvest_defeat=$(ele).find("dl:nth-child(6) > dd").text();
+            const managers=[],top=[],most=[];
+            $manager.each((idx,ele)=>{
+                managers.push($(ele).text());
+            });
+            $top_scorer.each((idx,ele)=>{
+                top.push($(ele).text());
+            })
+            $most_appear.each((idx,ele)=>{
+                most.push($(ele).text());
+            })
+            result[idx]={
+                ...result[idx],
+                "rank":rank,
+                "managers":managers,
+                "topScorer":top,
+                "mostAppearance":most,
+                "biggestWin":biggest_win,
+                "havestDefeat":harvest_defeat
+            };
+        });
+        $kits.each((idx,ele)=>{
+            const home=$(ele).find("div:nth-child(1) > picture > img").attr("src");
+            const away=$(ele).find("div:nth-child(2) > picture > img").attr("src");
+            const third=$(ele).find("div:nth-child(3) > picture > img").attr("src");
+            result[idx]={
+                ...result[idx],
+                "kits":[home,away,third]
+            };
+        });
+            //if(result.length===0){//crawling 실패 경우
+               // const season=Season.find({});
+               // res.json({error:0,results:season});
+            //}else{
+              /*  const newItem=Season.create({
+                    season:result[result.length-1].season,
+                    matches:result[result.length-1].matches,
+                    won:result[result.length-1].won,
+                    draw:result[result.length-1].draw,
+                    lost:result[result.length-1].lost,
+                    gd:result[result.length-1].gd,
+                    points:result[result.length-1].points,
+                    rank:result[result.length-1].rank,
+                    managers:result[result.length-1].managers,
+                    topScorer:result[result.length-1].top,
+                    mostAppearance:result[result.length-1].most,
+                    biggestWin:result[result.length-1].biggest_win,
+                    havestDefeat:result[result.length-1].harvest_defeat
+                })*/
+            res.json({error:0,results:result});
+        //x}
+    })
+});
+globalRouter.get("/season/stats/:id",async(req,res)=>{
         let _id=req.params['id'];
         function delay( timeout ) {
             return new Promise(( resolve ) => {
               setTimeout( resolve, timeout );
             });
         }
-        Stats.findOne({s_id:_id},(err,data)=>{
+        await Stats.findOne({s_id:_id},async(err,data)=>{
             if(err)res.status(500).json({error:1,msg:"DB Error"});
             if(!data){
                 let result={s_id:_id},stats=new Stats();
                 stats.s_id=_id;
                 puppeteer.launch( { headless : true} ).then(async browser => {
                     const page = await browser.newPage();
-                    await page.goto( `https://www.premierleague.com/clubs/4/Chelsea/stats?se=${_id}`, { waitUntil : "networkidle2" } );
+                    page.goto( `https://www.premierleague.com/clubs/4/Chelsea/stats?se=${_id}`, { waitUntil : "networkidle2" } );
                     await delay(6000);
-                    const html = await page.$eval("#mainContent > div.wrapper.col-12 > div", e => e.outerHTML );
+                    const html = page.$eval("#mainContent > div.wrapper.col-12 > div", e => e.outerHTML );
                     const $=cheerio.load(html);
                     const $topStats=$("div.topStatList");
                     const $statsLists=$("div.statsListBlock");
@@ -267,5 +293,5 @@ export default function (app,Player,Manager,Stats){
                 res.json({error:0,results:data,msg:"DB"});
             } 
         })
-    });
-}
+});
+export default globalRouter;

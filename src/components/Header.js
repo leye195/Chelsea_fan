@@ -10,6 +10,9 @@ const Header=()=>{
             <li className="_home"><Link to="/">Home</Link></li>
             <li className="_about"><Link to="/about">About</Link></li>
             <li className="_team"><Link to="/team">Team</Link></li>
+            <li className="_stat">
+                <Link to={{pathname:"/stats",state:{_id:-1}}}>Stats</Link>
+            </li>
         </ul>
     </header>
 }

@@ -89,6 +89,7 @@ ul{
     display: flex;
     align-items: flex-end;
     padding-left: 0;
+    font-size: 0.8rem;
   }
   header ul li{
     list-style: none;
