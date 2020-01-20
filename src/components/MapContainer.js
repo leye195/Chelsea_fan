@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Map, GoogleApiWrapper, Marker } from 'google-maps-react';
 import dotenv from 'dotenv';
+dotenv.config();
 const mapStyles = {
     position:'relative',
     width: '100%',
@@ -8,7 +9,6 @@ const mapStyles = {
 };
 export class MapContainer extends Component {
     render() {
-        //console.log(API_KEY);
         return (
             <Map
         google={this.props.google}
@@ -27,6 +27,6 @@ export class MapContainer extends Component {
 }
 dotenv.config();
 export default GoogleApiWrapper({
-    apiKey:process.env.MAP_API
+    apiKey:process.env.REACT_APP_API
     //language:''
 })(MapContainer);

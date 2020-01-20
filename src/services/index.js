@@ -12,6 +12,8 @@ export const get_stats=(id)=>{
     //return axios.get(`https://footballapi.pulselive.com/football/stats/team/4?comps=1&compSeasons=${}`)
     return axios.get(`http://localhost:3030/season/stats/${id}`);
 }
-export const get_twitter=(ps=9)=>{
+
+//Chelsea Twitter API 
+export const get_twitter=(ps=6)=>{
     return axios.get(`https://api.canary.platform.pulselive.com/production/stream/86a1bb48-4ff2-47e6-81d1-64edd69a6adb/posts/?pageSize=${ps}`);
 }

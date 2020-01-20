@@ -55,6 +55,9 @@ ul{
     color:white;
     text-decoration: none;
   }
+  .menu__btn{
+    display: none;
+  }
 }
 /*
 ##Device = Most of the Smartphones Mobiles (Portrait)
@@ -73,23 +76,33 @@ ul{
     align-items: center;
     border-bottom: 3px solid white;
     top: 0;
-}
-header .logo{
+  }
+  header .logo{
     width: 80px;
     height: 80px;
-}
-header p{
+  }
+  header p{
     color: white;
     font-weight: 800;
     font-size:0.8rem;
     display: none;
-}
-ul{
+  }
+  ul{
     margin: 5px;
     display: flex;
     align-items: flex-end;
     padding-left: 0;
     font-size: 0.8rem;
+  }
+  header ul{
+    visibility: hidden;
+    position: absolute;
+    top: 75px;
+    z-index: 900;
+    width: 100%;
+    left: 0;
+    margin: 0;
+    background: black;
   }
   header ul li{
     list-style: none;
@@ -118,4 +131,28 @@ ul{
     color:white;
     text-decoration: none;
   }
+  .menu__btn{
+    position: absolute;
+    right: 0;
+    padding-left: 10px;
+    padding-right: 10px;
+    vertical-align: middle;
+    cursor: pointer;
+  }
+  .menu__btn div{
+    width: 2.2rem;
+    height: .2rem;
+    background: #fff;
+    margin-bottom: .3rem;
+    border-radius: .3rem;
+    position: relative;
+  }
+  .menu__open{
+    visibility: visible;
+    animation: menu-down 0.3s;
+  }
+  @keyframes menu-down {
+    0% { opacity: 0; -webkit-transform: translateY(-6%); padding-bottom: 0px; }   
+  100% { opacity: 1; -webkit-transform: translateY(0); padding-bottom: 0px; }
+}
 }

@@ -20,7 +20,7 @@ const Home=(props)=>{
     }    
   });
     return (
-    <div>
+    <div style={{backgroundColor:"#00009e"}}>
       <div className="bg">
         <p className="slider_p">
           Keep the Blue Flag Flying High
