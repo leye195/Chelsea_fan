@@ -17,7 +17,7 @@
 <p>첼시 관련 기본 정보 제공</p>
 <p>Google map 이용 첼시 스탬포드브릿지 구장 위치</p>
 <p>첼시팀 구성원 표시(스쿼드,코치)</p>
-<p>첼시 시즌 성적 및 기타 기록 제공 (puppeteer,cheerio 데이터 크롤링 후 DB에 저장)</p>
+<p>첼시 시즌 성적 및 시즌별 기타 기록 제공 (puppeteer,cheerio 데이터 크롤링 후 DB에 저장)</p>
 <p>Chelsea 트윗터 SNS 모음</p>
 
 ### ScreenShots 
