@@ -1,147 +1,169 @@
-
-@media (min-width:768px){
-
-.team ul{
+@media (min-width: 768px) {
+  .team ul {
     list-style: none;
     display: flex;
     align-items: center;
     flex-direction: row-reverse;
     color: white;
-}
-.team ul li{
+  }
+  .team ul li {
     cursor: pointer;
     margin: 5px;
     padding: 5px;
     border: 2px solid white;
     font-weight: 700;
-}
-.team_ul li:not([className*="active"]):hover{
+  }
+  .team_ul li:not([className*="active"]):hover {
     transition: background-color 1.3s;
     background-color: white;
     color: #00009e;
-}
-.active{
+  }
+  .active {
     background-color: white !important;
-    color:#00009e !important;
+    color: #00009e !important;
     font-weight: 700;
     border: 2px solid white !important;
-}
-.players h4,.management h4,.seasons h4{
+  }
+  .players h4,
+  .management h4,
+  .seasons h4 {
     color: white;
     margin-left: 10px;
     padding-left: 10px;
     margin-bottom: 5px;
-}
-.players ul,.management ul{
+    margin-top: 5px;
+  }
+  .players ul,
+  .management ul {
     display: grid;
-    grid-template-columns: repeat(3,33%);
+    grid-template-columns: repeat(3, 33%);
     padding: 0;
     padding-left: 10px;
     margin-bottom: 0;
-} 
-.player ul li,.management ul li{
-    border:none;
+  }
+  .player ul li,
+  .management ul li {
+    border: none;
     margin: 5px;
-    padding:0;
-    background-image: linear-gradient(#213269,#e2e2e2);
-}
-/*Player css style*/
-.player ul li{
+    padding: 0;
+    background-image: linear-gradient(#213269, #e2e2e2);
+  }
+  /*Player css style*/
+  .player ul li {
     transition: all 2s;
-    -webkit-transition: all .3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
     transform: scale(1);
     -webkit-transform: scale(1);
     border-radius: 5px;
-}
-.player ul li:hover{
+    padding-bottom: 20px;
+    height: 100%;
+  }
+  .player ul li:hover {
     transform: scale(1.025);
-}
-.player ul li>div{
+  }
+  .player ul li > div {
     position: relative;
-}
-.player ul li>div>div{
+  }
+  .player ul li > div > div {
     position: absolute;
     display: inline-block;
     width: 100%;
-}
-.player li>div img{
+  }
+  .player li > div img {
     position: relative;
     height: 140px;
     vertical-align: middle;
     float: right;
-    overflow:hidden
-}
-.player .name{
-    font-size:1.2rem;
-    margin: .2rem 0 .5rem;
+    overflow: hidden;
+  }
+  .player .name {
+    font-size: 1.2rem;
+    margin: 0.2rem 0 0.5rem;
     padding-right: 8rem;
     padding-left: 10px;
     line-height: 1;
     height: 48px;
-}
-.player .position,.player .number{
+  }
+  .player .position,
+  .player .number {
     font-size: 1.2rem;
     font-weight: 100;
     padding-left: 10px;
-}
-.player .country{
-    font-size: 1.0rem;
+  }
+  .player .country {
+    font-size: 1rem;
     font-weight: 100;
     margin-top: 5px;
+    margin-bottom: 10px;
     padding-top: 5px;
     padding-left: 10px;
-}
-/*manager css style*/
-.management ul li{
+  }
+  .player .view {
+    background: white;
+    color: black;
+    text-align: right;
+  }
+  .player .view a {
+    color: black;
+  }
+  .player .view p {
+    margin: 0;
+  }
+  .player .view p span {
+    margin-left: 10px;
+  }
+  /*manager css style*/
+  .management ul li {
     transition: all 2s;
-    -webkit-transition: all .3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
     transform: scale(1);
     -webkit-transform: scale(1);
     border-radius: 5px;
-}
-.management ul li:hover{
+  }
+  .management ul li:hover {
     transform: scale(1.025);
-}
-.management ul li>div{
+  }
+  .management ul li > div {
     position: relative;
-}
-.management ul li>div>div{
+  }
+  .management ul li > div > div {
     position: absolute;
     display: inline-block;
-}
-.management li>div img{
+  }
+  .management li > div img {
     position: relative;
     height: 140px;
     width: 100px;
     vertical-align: middle;
     float: right;
-}
-.management .name{
-    font-size:1.2rem;
-    margin: .2rem 0 .5rem;
+  }
+  .management .name {
+    font-size: 1.2rem;
+    margin: 0.2rem 0 0.5rem;
     padding-right: 8rem;
     padding-left: 10px;
     line-height: 1;
     height: 48px;
-}
-.management .role,.management .club{
+  }
+  .management .role,
+  .management .club {
     font-size: 0.3rem;
     font-weight: 100;
     padding-left: 10px;
     padding-top: 5px;
-}
-.management .country{
-    font-size: 1.0rem;
+  }
+  .management .country {
+    font-size: 1rem;
     font-weight: 100;
     margin-top: 5px;
     padding-top: 5px;
     padding-left: 10px;
-}
-/*Season*/
-.season{
+  }
+  /*Season*/
+  .season {
     border-bottom: 7px solid #dcdcdc;
-}
-.season>div:first-child{
+  }
+  .season > div:first-child {
     position: relative;
     background-color: #37003c;
     box-shadow: inset -3px -1px 14px 1px #9c88af;
@@ -149,45 +171,45 @@
     line-height: 3rem;
     /*margin-bottom: 3rem;*/
     padding: 0.2rem 0.2rem;
-}
-.season>div:first-child h4{
+  }
+  .season > div:first-child h4 {
     margin-bottom: 0;
-}
-.seasons>div:first-child h4+span {
+  }
+  .seasons > div:first-child h4 + span {
     position: absolute;
     right: 2%;
     top: 0;
     cursor: pointer;
-}
-.club__{
+  }
+  .club__ {
     display: flex;
     flex-wrap: wrap;
-    flex-direction:row;
+    flex-direction: row;
     background-color: white;
-}
-.club__>div:first-child{
+  }
+  .club__ > div:first-child {
     padding-left: 8px;
     padding-right: 8px;
     width: 20%;
-}
-.club__stats{
+  }
+  .club__stats {
     display: flex;
     flex-direction: column;
-}
-.club__stats dt{
+  }
+  .club__stats dt {
     color: #76766f;
-    font-size:0.7rem;
-}
-.club__stats dd{
+    font-size: 0.7rem;
+  }
+  .club__stats dd {
     margin: 0;
     font-weight: 700;
     margin-bottom: 5px;
     font-size: 0.8rem;
-}
-.club__stats dd p{
-    margin:0;
-}
-.more{
+  }
+  .club__stats dd p {
+    margin: 0;
+  }
+  .more {
     cursor: pointer;
     display: inline-block;
     position: relative;
@@ -197,29 +219,29 @@
     width: 100%;
     text-align: center;
     transition: 0.3s;
-}
-.more:hover{
-    background:#e3e3e3;
+  }
+  .more:hover {
+    background: #e3e3e3;
     color: white;
-}
-.more div{
-    padding:5px;
+  }
+  .more div {
+    padding: 5px;
     color: #6c6c6c;
-}
-.club__kits__table{
+  }
+  .club__kits__table {
     position: relative;
     flex-grow: 1;
     display: flex;
     flex-direction: column;
     border-left: 1px solid #e8e8e8;
     width: 80%;
-}
-.club__kits{
+  }
+  .club__kits {
     display: flex;
     flex-direction: row;
     justify-content: center;
-}
-.club__kit{
+  }
+  .club__kit {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -227,668 +249,708 @@
     padding-left: 5px;
     padding-right: 5px;
     padding-top: 6px;
-}
-.club__kit h5{
+  }
+  .club__kit h5 {
     background: none;
     color: black;
     font-size: 0.8rem;
     text-align: -webkit-center;
     margin-bottom: 6px;
-}
-.club__kit img{
+  }
+  .club__kit img {
     width: 110px;
     height: 100px;
-}
-.table{
+  }
+  .table {
     position: absolute;
     display: flex;
     justify-content: center;
     margin-top: 18px;
     width: 100%;
     bottom: 1px;
-}
-.table table{
+  }
+  .table table {
     width: 100%;
     border-bottom: 1px solid #e3e3e3;
     border-collapse: collapse;
-}
-.table thead{
+  }
+  .table thead {
     background-color: #fbfbfb;
     color: #6c6c6c;
-}
-.table thead tr{
+  }
+  .table thead tr {
     box-shadow: 1px 3px 20px 1px #bdbdbd;
-}
-.table th{
-    font-size: 1.0rem;
+  }
+  .table th {
+    font-size: 1rem;
     font-weight: 300;
-}
-tbody tr{
+  }
+  tbody tr {
     background-color: #0a4595;
     color: white;
-}
-.th_pos,.th_club,.th_win,.th_draw,.th_lost{
+  }
+  .th_pos,
+  .th_club,
+  .th_win,
+  .th_draw,
+  .th_lost {
     padding-right: 0.3rem;
     width: 10%;
-}
-.th_match{
-    width:15%;
-}
-.table td{
+  }
+  .th_match {
+    width: 15%;
+  }
+  .table td {
     text-align: center;
     font-weight: 200;
-    padding: .5rem;
-}
-.t_active{
+    padding: 0.5rem;
+  }
+  .t_active {
     display: flex;
-    animation: slide-down .3s ease-out;
-    -webkit-animation: slide-down .3s ease-out;
-}
-.t_hide{
+    animation: slide-down 0.3s ease-out;
+    -webkit-animation: slide-down 0.3s ease-out;
+  }
+  .t_hide {
     display: none;
+  }
+  @keyframes slide-down {
+    0% {
+      opacity: 0;
+      -webkit-transform: translateY(-2%);
+    }
+    100% {
+      opacity: 1;
+      -webkit-transform: translateY(0);
+    }
+  }
 }
-@keyframes slide-down {
-    0% { opacity: 0; -webkit-transform: translateY(-2%);}   
-  100% { opacity: 1; -webkit-transform: translateY(0);}
-}
-}
-@media (max-width:767px) and (min-width:481px){
-    .team ul{
-        list-style: none;
-        display: flex;
-        align-items: center;
-        flex-direction: row-reverse;
-        color: white;
+@media (max-width: 767px) and (min-width: 481px) {
+  .team ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
+    color: white;
+  }
+  .team ul li {
+    cursor: pointer;
+    margin: 5px;
+    padding: 5px;
+    border: 2px solid white;
+    font-weight: 700;
+  }
+  .team_ul li:not([className*="active"]):hover {
+    transition: background-color 1.3s;
+    background-color: white;
+    color: #00009e;
+  }
+  .active {
+    background-color: white !important;
+    color: #00009e !important;
+    font-weight: 700;
+    border: 2px solid white !important;
+  }
+  .players h4,
+  .management h4 {
+    color: white;
+    margin-left: 10px;
+    padding-left: 10px;
+  }
+  .players ul,
+  .management ul {
+    display: grid;
+    grid-template-columns: repeat(3, 33%);
+    padding: 0;
+    padding-left: 10px;
+    margin-bottom: 0;
+  }
+  .player ul li,
+  .management ul li {
+    border: none;
+    margin: 5px;
+    padding: 0;
+    background-image: linear-gradient(#213269, #e2e2e2);
+  }
+  /*Player css style*/
+  .player ul li {
+    transition: all 2s;
+    -webkit-transition: all 0.3s ease-in-out;
+    transform: scale(1);
+    -webkit-transform: scale(1);
+    border-radius: 5px;
+  }
+  .player ul li:hover {
+    transform: scale(1.025);
+  }
+  .player ul li > div {
+    position: relative;
+  }
+  .player ul li > div > div {
+    position: absolute;
+    display: inline-block;
+    width: 100%;
+  }
+  .player li > div img {
+    position: relative;
+    height: 140px;
+    width: 55%;
+    vertical-align: middle;
+    float: right;
+    overflow: hidden;
+  }
+  .player .name {
+    font-size: 1rem;
+    margin: 0.2rem 0 0.5rem;
+    padding-right: 8rem;
+    padding-left: 10px;
+    line-height: 1;
+    height: 48px;
+  }
+  .player .position,
+  .player .number {
+    font-size: 0.5rem;
+    font-weight: 100;
+    padding-left: 10px;
+  }
+  .player .country {
+    font-size: 0.25rem;
+    font-weight: 100;
+    margin-top: 5px;
+    padding-top: 5px;
+    padding-left: 10px;
+  }
+  /*manager css style*/
+  .management ul li {
+    transition: all 2s;
+    -webkit-transition: all 0.3s ease-in-out;
+    transform: scale(1);
+    -webkit-transform: scale(1);
+    border-radius: 5px;
+    width: 88%;
+  }
+  .management ul li:hover {
+    transform: scale(1.025);
+  }
+  .management ul li > div {
+    position: relative;
+  }
+  .management ul li > div > div {
+    display: inline-block;
+    width: 100%;
+  }
+  .management li > div img {
+    position: relative;
+    height: 140px;
+    width: 100%;
+    vertical-align: middle;
+    z-index: -1;
+  }
+  .management .name {
+    font-size: 1rem;
+    margin: 0.1rem 0 0.1rem;
+    padding-right: 8rem;
+    padding-left: 5px;
+    line-height: 1;
+    height: 35px;
+  }
+  .management .role,
+  .management .club {
+    font-size: 0.5rem;
+    font-weight: 100;
+    padding-left: 5px;
+    padding-top: 5px;
+  }
+  .management .country {
+    font-size: 0.2rem;
+    font-weight: 100;
+    margin-top: 5px;
+    padding-top: 5px;
+    padding-left: 5px;
+  }
+  /*Season*/
+  .season {
+    border-bottom: 7px solid #dcdcdc;
+  }
+  .season > div:first-child {
+    position: relative;
+    background-color: #37003c;
+    box-shadow: inset -3px -1px 14px 1px #9c88af;
+    color: #fff;
+    line-height: 3rem;
+    /*margin-bottom: 3rem;*/
+    padding: 0.2rem 0.2rem;
+  }
+  .season > div:first-child h4 {
+    margin-bottom: 0;
+    font-size: 0.8rem;
+  }
+  .seasons > div:first-child h4 + span {
+    position: absolute;
+    right: 2%;
+    top: 0;
+    cursor: pointer;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .club__ {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    background-color: white;
+  }
+  .club__ > div:first-child {
+    padding-left: 4px;
+    padding-right: 4px;
+    width: 20%;
+  }
+  .club__stats {
+    display: flex;
+    flex-direction: column;
+  }
+  .club__stats dt {
+    color: #76766f;
+    font-size: 0.7rem;
+  }
+  .club__stats dd {
+    margin: 0;
+    font-weight: 700;
+    margin-bottom: 5px;
+    font-size: 0.4rem;
+  }
+  .club__stats dd p {
+    margin: 0;
+  }
+  .more {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    bottom: 10px;
+    border: 1px solid #6c6c6c;
+    border-radius: 5px;
+    width: 100%;
+    text-align: center;
+  }
+  .more:hover {
+    background: #e3e3e3;
+  }
+  .more div {
+    padding: 5px;
+    color: #6c6c6c;
+    font-size: 0.75rem;
+  }
+  .club__kits__table {
+    position: relative;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    border-left: 1px solid #e8e8e8;
+    width: 80%;
+  }
+  .club__kits {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+  .club__kit {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 6px;
+  }
+  .club__kit h5 {
+    background: none;
+    color: black;
+    font-size: 0.8rem;
+    text-align: -webkit-center;
+    margin-bottom: 6px;
+  }
+  .club__kit img {
+    width: 85px;
+    height: 90px;
+  }
+  .table {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    margin-top: 18px;
+    width: 100%;
+    bottom: 1px;
+  }
+  .table table {
+    width: 100%;
+    border-bottom: 1px solid #e3e3e3;
+    border-collapse: collapse;
+  }
+  .table thead {
+    background-color: #fbfbfb;
+    color: #6c6c6c;
+  }
+  .table thead tr {
+    box-shadow: 1px 3px 20px 1px #bdbdbd;
+  }
+  .table th {
+    font-size: 0.7rem;
+    font-weight: 300;
+  }
+  tbody tr {
+    background-color: #0a4595;
+    color: white;
+    font-size: 0.7rem;
+  }
+  .th_pos,
+  .th_club,
+  .th_win,
+  .th_draw,
+  .th_lost {
+    padding-right: 0.3rem;
+    width: 10%;
+  }
+  .th_match {
+    width: 15%;
+  }
+  .table td {
+    text-align: center;
+    font-weight: 200;
+    padding: 0.5rem;
+  }
+  .t_active {
+    display: flex;
+    animation: slide-down 0.3s ease-out;
+    -webkit-animation: slide-down 0.3s ease-out;
+  }
+  .t_hide {
+    display: none;
+  }
+  @keyframes slide-down {
+    0% {
+      opacity: 0;
+      -webkit-transform: translateY(-2%);
     }
-    .team ul li{
-        cursor: pointer;
-        margin: 5px;
-        padding: 5px;
-        border: 2px solid white;
-        font-weight: 700;
+    100% {
+      opacity: 1;
+      -webkit-transform: translateY(0);
     }
-    .team_ul li:not([className*="active"]):hover{
-        transition: background-color 1.3s;
-        background-color: white;
-        color: #00009e;
-    }
-    .active{
-        background-color: white !important;
-        color:#00009e !important;
-        font-weight: 700;
-        border: 2px solid white !important;
-    }
-    .players h4,.management h4{
-        color: white;
-        margin-left: 10px;
-        padding-left: 10px;
-    }
-    .players ul,.management ul{
-        display: grid;
-        grid-template-columns: repeat(3,33%);
-        padding: 0;
-        padding-left: 10px;
-        margin-bottom: 0;
-    } 
-    .player ul li,.management ul li{
-        border:none;
-        margin: 5px;
-        padding:0;
-        background-image: linear-gradient(#213269,#e2e2e2);
-    }
-    /*Player css style*/
-    .player ul li{
-        transition: all 2s;
-        -webkit-transition: all .3s ease-in-out;
-        transform: scale(1);
-        -webkit-transform: scale(1);
-        border-radius: 5px;
-    }
-    .player ul li:hover{
-        transform: scale(1.025);
-    }
-    .player ul li>div{
-        position: relative;
-    }
-    .player ul li>div>div{
-        position: absolute;
-        display: inline-block;
-        width: 100%;
-    }
-    .player li>div img{
-        position: relative;
-        height: 140px;
-        width: 55%;
-        vertical-align: middle;
-        float: right;
-        overflow:hidden
-    }
-    .player .name{
-        font-size:1.0rem;
-        margin: .2rem 0 .5rem;
-        padding-right: 8rem;
-        padding-left: 10px;
-        line-height: 1;
-        height: 48px;
-        
-    }
-    .player .position,.player .number{
-        font-size: 0.5rem;
-        font-weight: 100;
-        padding-left: 10px;
-    }
-    .player .country{
-        font-size: 0.25rem;
-        font-weight: 100;
-        margin-top: 5px;
-        padding-top: 5px;
-        padding-left: 10px;
-    }
-    /*manager css style*/
-    .management ul li{
-        transition: all 2s;
-        -webkit-transition: all .3s ease-in-out;
-        transform: scale(1);
-        -webkit-transform: scale(1);
-        border-radius: 5px;
-        width: 88%;
-    }
-    .management ul li:hover{
-        transform: scale(1.025);
-    }
-    .management ul li>div{
-        position: relative;
-    }
-    .management ul li>div>div{
-        display: inline-block;
-        width: 100%;
-    }
-    .management li>div img{
-        position: relative;
-        height: 140px;
-        width: 100%;
-        vertical-align: middle;
-        z-index: -1;
-    }
-    .management .name{
-        font-size: 1.0rem;
-        margin: .1rem 0 .1rem;
-        padding-right: 8rem;
-        padding-left: 5px;
-        line-height: 1;
-        height: 35px;
-    }
-    .management .role,.management .club{
-        font-size: 0.5rem;
-        font-weight: 100;
-        padding-left: 5px;
-        padding-top: 5px;
-    }
-    .management .country{
-        font-size: 0.2rem;
-        font-weight: 100;
-        margin-top: 5px;
-        padding-top: 5px;
-        padding-left: 5px;
-    }
-    /*Season*/
-    .season{
-        border-bottom: 7px solid #dcdcdc;
-    }
-    .season>div:first-child{
-        position: relative;
-        background-color: #37003c;
-        box-shadow: inset -3px -1px 14px 1px #9c88af;
-        color: #fff;
-        line-height: 3rem;
-        /*margin-bottom: 3rem;*/
-        padding: 0.2rem 0.2rem;
-    }
-    .season>div:first-child h4{
-        margin-bottom: 0;
-        font-size: 0.8rem;
-    }
-    .seasons>div:first-child h4+span {
-        position: absolute;
-        right: 2%;
-        top: 0;
-        cursor: pointer;
-        padding-left: 10px;
-        padding-right: 10px;
-    }
-    .club__{
-        display: flex;
-        flex-wrap: wrap;
-        flex-direction:row;
-        background-color: white;
-    }
-    .club__>div:first-child{
-        padding-left: 4px;
-        padding-right: 4px;
-        width: 20%;
-    }
-    .club__stats{
-        display: flex;
-        flex-direction: column;
-    }
-    .club__stats dt{
-        color: #76766f;
-        font-size:0.7rem;
-    }
-    .club__stats dd{
-        margin: 0;
-        font-weight: 700;
-        margin-bottom: 5px;
-        font-size: 0.4rem;
-    }
-    .club__stats dd p{
-        margin:0;
-    }
-    .more{
-        cursor: pointer;
-        display: inline-block;
-        position: relative;
-        bottom: 10px;
-        border: 1px solid #6c6c6c;
-        border-radius: 5px;
-        width: 100%;
-        text-align: center;
-    }
-    .more:hover{
-        background:#e3e3e3;
-    }
-    .more div{
-        padding:5px;
-        color: #6c6c6c;
-        font-size: 0.75rem;
-    }
-    .club__kits__table{
-        position: relative;
-        flex-grow: 1;
-        display: flex;
-        flex-direction: column;
-        border-left: 1px solid #e8e8e8;
-        width: 80%;
-    }
-    .club__kits{
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-    }
-    .club__kit{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        padding-left: 10px;
-        padding-right: 10px;
-        padding-top: 6px;
-    }
-    .club__kit h5{
-        background: none;
-        color: black;
-        font-size: 0.8rem;
-        text-align: -webkit-center;
-        margin-bottom: 6px;
-    }
-    .club__kit img{
-        width: 85px;
-        height: 90px;
-    }
-    .table{
-        position: absolute;
-        display: flex;
-        justify-content: center;
-        margin-top: 18px;
-        width: 100%;
-        bottom: 1px;
-    }
-    .table table{
-        width: 100%;
-        border-bottom: 1px solid #e3e3e3;
-        border-collapse: collapse;
-    }
-    .table thead{
-        background-color: #fbfbfb;
-        color: #6c6c6c;
-    }
-    .table thead tr{
-        box-shadow: 1px 3px 20px 1px #bdbdbd;
-    }
-    .table th{
-        font-size: 0.7rem;
-        font-weight: 300;
-    }
-    tbody tr{
-        background-color: #0a4595;
-        color: white;
-        font-size: 0.7rem;
-    }
-    .th_pos,.th_club,.th_win,.th_draw,.th_lost{
-        padding-right: 0.3rem;
-        width: 10%;
-    }
-    .th_match{
-        width:15%;
-    }
-    .table td{
-        text-align: center;
-        font-weight: 200;
-        padding: .5rem;
-    }
-    .t_active{
-        display: flex;
-        animation: slide-down .3s ease-out;
-        -webkit-animation: slide-down .3s ease-out;
-    }
-    .t_hide{
-        display: none;
-    }
-    @keyframes slide-down {
-        0% { opacity: 0; -webkit-transform: translateY(-2%);}   
-      100% { opacity: 1; -webkit-transform: translateY(0);}
-    }
+  }
 }
 @media (min-width: 0px) and (max-width: 480px) {
-    .team{
-        padding-top:70px;
+  .team {
+    padding-top: 70px;
+  }
+  .team ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
+    color: white;
+    justify-content: center;
+  }
+  .team ul li {
+    cursor: pointer;
+    margin: 5px;
+    padding: 5px;
+    border: 2px solid white;
+    font-weight: 700;
+  }
+  .team_ul li:not([className*="active"]):hover {
+    transition: background-color 1.3s;
+    background-color: white;
+    color: #00009e;
+  }
+  .active {
+    background-color: white !important;
+    color: #00009e !important;
+    font-weight: 700;
+    border: 2px solid white !important;
+  }
+  .players h4,
+  .management h4 {
+    color: white;
+    margin-left: 10px;
+    padding-left: 10px;
+  }
+  .players ul,
+  .management ul {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    padding-left: 10px;
+    margin-bottom: 0;
+  }
+  .player ul li,
+  .management ul li {
+    border: none;
+    margin: 5px;
+    padding: 0;
+    background-image: linear-gradient(#213269, #e2e2e2);
+  }
+  /*Player css style*/
+  .player ul li {
+    transition: all 2s;
+    -webkit-transition: all 0.3s ease-in-out;
+    transform: scale(1);
+    -webkit-transform: scale(1);
+    border-radius: 5px;
+    height: 82px;
+    width: 100%;
+  }
+  .player ul li:hover {
+    transform: scale(1.025);
+  }
+  .player ul li > div {
+    position: relative;
+  }
+  .player ul li > div > div {
+    display: inline;
+  }
+  .player li > div img {
+    position: absolute;
+    height: 82px;
+    vertical-align: middle;
+    top: 0px;
+    right: 20px;
+  }
+  .player .name {
+    font-size: 1rem;
+    /* margin: .2rem 0 .5rem; */
+    padding-right: 8rem;
+    padding-left: 0px;
+    line-height: 1;
+    /* height: 48px;*/
+  }
+  .player .position,
+  .player .number {
+    font-size: 0.5rem;
+    font-weight: 100;
+    padding-left: 10px;
+  }
+  .player .country {
+    font-size: 0.25rem;
+    font-weight: 100;
+    margin-top: 5px;
+    padding-top: 5px;
+    padding-left: 10px;
+  }
+  /*manager css style*/
+  .management ul li {
+    transition: all 2s;
+    -webkit-transition: all 0.3s ease-in-out;
+    transform: scale(1);
+    -webkit-transform: scale(1);
+    border-radius: 5px;
+    height: 82px;
+    width: 100%;
+  }
+  .management ul li:hover {
+    transform: scale(1.025);
+  }
+  .management ul li > div {
+    position: relative;
+  }
+  .management ul li > div > div {
+    display: inline-block;
+    width: 100%;
+  }
+  .management li > div img {
+    position: absolute;
+    height: 82px;
+    vertical-align: middle;
+    top: 0px;
+    right: 20px;
+  }
+  .management .name {
+    font-size: 1rem;
+    /* margin: .2rem 0 .5rem; */
+    padding-right: 8rem;
+    padding-left: 0px;
+    line-height: 1;
+    /* height: 48px;*/
+  }
+  .management .role,
+  .management .club {
+    font-size: 0.5rem;
+    font-weight: 100;
+    padding-left: 10px;
+  }
+  .management .country {
+    font-size: 0.25rem;
+    font-weight: 100;
+    margin-top: 5px;
+    padding-top: 5px;
+    padding-left: 10px;
+  }
+  /*season*/
+  .season {
+    border-bottom: 7px solid #dcdcdc;
+    position: relative;
+    padding-bottom: 40px;
+  }
+  .season > div:first-child {
+    position: relative;
+    background-color: #37003c;
+    box-shadow: inset -3px -1px 14px 1px #9c88af;
+    color: #fff;
+    line-height: 3rem;
+    /*margin-bottom: 3rem;*/
+    padding: 0.2rem 0.2rem;
+  }
+  .season > div:first-child h4 {
+    margin-bottom: 0;
+    font-size: 0.8rem;
+  }
+  .seasons > div:first-child h4 + span {
+    position: absolute;
+    right: 2%;
+    top: 0;
+    cursor: pointer;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .club__ {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    background-color: white;
+  }
+  .club__ > div:first-child {
+    padding-left: 4px;
+    padding-right: 4px;
+    width: 40%;
+  }
+  .club__stats {
+    display: flex;
+    flex-direction: column;
+  }
+  .club__stats dt {
+    color: #76766f;
+    font-size: 0.7rem;
+  }
+  .club__stats dd {
+    margin: 0;
+    font-weight: 700;
+    margin-bottom: 5px;
+    font-size: 0.4rem;
+  }
+  .club__stats dd p {
+    margin: 0;
+  }
+  .more {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    bottom: 10px;
+    border: 1px solid #6c6c6c;
+    border-radius: 5px;
+    width: 100%;
+    text-align: center;
+  }
+  .more:hover {
+    background: #e3e3e3;
+    color: white;
+  }
+  .more div {
+    padding: 5px;
+    color: #6c6c6c;
+    font-size: 0.75rem;
+  }
+  .club__kits__table {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    border-left: 1px solid #e8e8e8;
+    width: 60%;
+  }
+  .club__kits {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .club__kit {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 0px;
+  }
+  .club__kit h5 {
+    background: none;
+    color: black;
+    font-size: 0.5rem;
+    text-align: -webkit-center;
+    margin-bottom: 6px;
+  }
+  .club__kit img {
+    width: 42px;
+    height: 42px;
+  }
+  .table {
+    position: absolute;
+    /* display: flex; */
+    /* justify-content: center; */
+    /* margin-top: 18px; */
+    width: 100%;
+    bottom: 1px;
+    left: 0;
+  }
+  .table table {
+    width: 100%;
+    border-bottom: 1px solid #e3e3e3;
+    border-collapse: collapse;
+  }
+  .table thead {
+    background-color: #fbfbfb;
+    color: #6c6c6c;
+  }
+  .table thead tr {
+    box-shadow: 1px 3px 20px 1px #bdbdbd;
+  }
+  .table th {
+    font-size: 0.7rem;
+    font-weight: 300;
+  }
+  tbody tr {
+    background-color: #0a4595;
+    color: white;
+    font-size: 0.7rem;
+  }
+  .th_pos,
+  .th_club,
+  .th_win,
+  .th_draw,
+  .th_lost {
+    padding-right: 0.3rem;
+    width: 10%;
+  }
+  .th_match {
+    width: 15%;
+  }
+  .table td {
+    text-align: center;
+    font-weight: 200;
+    padding: 0.5rem;
+  }
+  .t_active {
+    display: flex;
+    animation: slide-down 0.5s ease-in-out;
+    -webkit-animation: slide-down 0.5s ease-in-out;
+  }
+  .t_hide {
+    display: none;
+  }
+  @keyframes slide-down {
+    0% {
+      opacity: 0;
+      -webkit-transform: translateY(-2%);
+      padding-bottom: 0px;
     }
-    .team ul{
-        list-style: none;
-        display: flex;
-        align-items: center;
-        flex-direction: row-reverse;
-        color: white;
-        justify-content: center;
+    100% {
+      opacity: 1;
+      -webkit-transform: translateY(0);
+      padding-bottom: 40px;
     }
-    .team ul li{
-        cursor: pointer;
-        margin: 5px;
-        padding: 5px;
-        border: 2px solid white;
-        font-weight: 700;
-    }
-    .team_ul li:not([className*="active"]):hover{
-        transition: background-color 1.3s;
-        background-color: white;
-        color: #00009e;
-    }
-    .active{
-        background-color: white !important;
-        color:#00009e !important;
-        font-weight: 700;
-        border: 2px solid white !important;
-    }
-    .players h4,.management h4{
-        color: white;
-        margin-left: 10px;
-        padding-left: 10px;
-    }
-    .players ul,.management ul{
-        display: flex;
-        flex-direction: column;
-        padding: 0;
-        padding-left: 10px;
-        margin-bottom: 0;
-    } 
-    .player ul li,.management ul li{
-        border:none;
-        margin: 5px;
-        padding:0;
-        background-image: linear-gradient(#213269,#e2e2e2);
-    }
-    /*Player css style*/
-    .player ul li{
-        transition: all 2s;
-        -webkit-transition: all .3s ease-in-out;
-        transform: scale(1);
-        -webkit-transform: scale(1);
-        border-radius: 5px;
-        height: 82px;
-        width: 100%;
-    }
-    .player ul li:hover{
-        transform: scale(1.025);
-    }
-    .player ul li>div{
-        position: relative;
-    }
-    .player ul li>div>div{
-        display: inline;
-    }
-    .player li>div img{
-        position: absolute;
-        height: 82px;
-        vertical-align: middle;
-        top: 0px;
-        right: 20px;
-    }
-    .player .name{
-        font-size: 1.0rem;
-        /* margin: .2rem 0 .5rem; */
-        padding-right: 8rem;
-        padding-left: 0px;
-        line-height: 1;
-        /* height: 48px;*/
-    }
-    .player .position,.player .number{
-        font-size: 0.5rem;
-        font-weight: 100;
-        padding-left: 10px;
-    }
-    .player .country{
-        font-size: 0.25rem;
-        font-weight: 100;
-        margin-top: 5px;
-        padding-top: 5px;
-        padding-left: 10px;
-    }
-    /*manager css style*/
-    .management ul li{
-        transition: all 2s;
-        -webkit-transition: all .3s ease-in-out;
-        transform: scale(1);
-        -webkit-transform: scale(1);
-        border-radius: 5px;
-        height: 82px;
-        width: 100%;
-    }
-    .management ul li:hover{
-        transform: scale(1.025);
-    }
-    .management ul li>div{
-        position: relative;
-    }
-    .management ul li>div>div{
-        display: inline-block;
-        width: 100%;
-    }
-    .management li>div img{
-        position: absolute;
-        height: 82px;
-        vertical-align: middle;
-        top: 0px;
-        right: 20px;
-    }
-    .management .name{
-        font-size: 1.0rem;
-        /* margin: .2rem 0 .5rem; */
-        padding-right: 8rem;
-        padding-left: 0px;
-        line-height: 1;
-        /* height: 48px;*/
-    }
-    .management .role,.management .club{
-        font-size: 0.5rem;
-        font-weight: 100;
-        padding-left: 10px;
-    }
-    .management .country{
-        font-size: 0.25rem;
-        font-weight: 100;
-        margin-top: 5px;
-        padding-top: 5px;
-        padding-left: 10px;
-    }
-    /*season*/
-    .season{
-        border-bottom: 7px solid #dcdcdc;
-        position: relative;
-        padding-bottom: 40px;
-    }
-    .season>div:first-child{
-        position: relative;
-        background-color: #37003c;
-        box-shadow: inset -3px -1px 14px 1px #9c88af;
-        color: #fff;
-        line-height: 3rem;
-        /*margin-bottom: 3rem;*/
-        padding: 0.2rem 0.2rem;
-    }
-    .season>div:first-child h4{
-        margin-bottom: 0;
-        font-size: 0.8rem;
-    }
-    .seasons>div:first-child h4+span {
-        position: absolute;
-        right: 2%;
-        top: 0;
-        cursor: pointer;
-        padding-left: 10px;
-        padding-right: 10px;
-    }
-    .club__{
-        display: flex;
-        flex-wrap: wrap;
-        flex-direction:row;
-        background-color: white;
-    }
-    .club__>div:first-child{
-        padding-left: 4px;
-        padding-right: 4px;
-        width: 40%;
-    }
-    .club__stats{
-        display: flex;
-        flex-direction: column;
-    }
-    .club__stats dt{
-        color: #76766f;
-        font-size:0.7rem;
-    }
-    .club__stats dd{
-        margin: 0;
-        font-weight: 700;
-        margin-bottom: 5px;
-        font-size: 0.4rem;
-    }
-    .club__stats dd p{
-        margin:0;
-    }
-    .more{
-        cursor: pointer;
-        display: inline-block;
-        position: relative;
-        bottom: 10px;
-        border: 1px solid #6c6c6c;
-        border-radius: 5px;
-        width: 100%;
-        text-align: center;
-        
-    }
-    .more:hover{
-        background:#e3e3e3;
-        color:white;
-    }
-    .more div{
-        padding:5px;
-        color: #6c6c6c;
-        font-size: 0.75rem;
-    }
-    .club__kits__table{
-        flex-grow: 1;
-        display: flex;
-        flex-direction: column;
-        border-left: 1px solid #e8e8e8;
-        width: 60%;
-    }
-    .club__kits{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-    }
-    .club__kit{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        padding-left: 10px;
-        padding-right: 10px;
-        padding-top: 0px;
-    }
-    .club__kit h5{
-        background: none;
-        color: black;
-        font-size: 0.5rem;
-        text-align: -webkit-center;
-        margin-bottom: 6px;
-    }
-    .club__kit img{
-        width: 42px;
-        height: 42px;
-    }
-    .table{
-        position: absolute;
-        /* display: flex; */
-        /* justify-content: center; */
-        /* margin-top: 18px; */
-        width: 100%;
-        bottom: 1px;
-        left: 0
-    }
-    .table table{
-        width: 100%;
-        border-bottom: 1px solid #e3e3e3;
-        border-collapse: collapse;
-    }
-    .table thead{
-        background-color: #fbfbfb;
-        color: #6c6c6c;
-    }
-    .table thead tr{
-        box-shadow: 1px 3px 20px 1px #bdbdbd;
-    }
-    .table th{
-        font-size: 0.7rem;
-        font-weight: 300;
-    }
-    tbody tr{
-        background-color: #0a4595;
-        color: white;
-        font-size: 0.7rem;
-    }
-    .th_pos,.th_club,.th_win,.th_draw,.th_lost{
-        padding-right: 0.3rem;
-        width: 10%;
-    }
-    .th_match{
-        width:15%;
-    }
-    .table td{
-        text-align: center;
-        font-weight: 200;
-        padding: .5rem;
-    }
-    .t_active{
-        display: flex;
-        animation: slide-down .5s ease-in-out;
-        -webkit-animation: slide-down .5s ease-in-out;
-    }
-    .t_hide{
-        display: none;
-    }
-    @keyframes slide-down {
-        0% { opacity: 0; -webkit-transform: translateY(-2%); padding-bottom: 0px; }   
-      100% { opacity: 1; -webkit-transform: translateY(0); padding-bottom: 40px; }
-    }
+  }
 }

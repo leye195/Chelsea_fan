@@ -1,441 +1,438 @@
-@media (min-width:768px){
-    .sns__container ul{
-        display: block;
-        padding: 1px;
-    }
-    .sns__container .on__sns{
-        position: relative;
-        display: inline-block;
-        margin-bottom: 5px;
-        margin-left: 10px;
-        margin-right: 10px;
-        font-size: 1.2rem;
-        color: white;
-        font-weight: 600;
-        text-shadow: 5px 3px 20px #ffffff;
-    }
-    .on__sns::after{
-        position: absolute;
-        display: block;
-        content: "";
-        height: 0.1rem;
-        width: 100%;
-        background-color: white;
-    }
-    .sns__container button{
-        all: unset;
-        display: block;
-        width: 200px;
-        height: 30px;
-        text-align: center;
-        margin: 0 auto;
-        padding: 8px;
-        border-radius: 10px;
-        border: 1px solid #929292;
-        color: black;
-        font-weight: 700;
-        background: white;
-        box-shadow: 5px 3px 20px 0px white;
-        cursor: pointer;
-    }
-    .cardContent{
-        height: 26.5rem;
-        width: 33%;
-        border: 1px solid;
-        list-style: none;
-        display: inline-table;
-        margin: 1px;
-        background: #1b1919;
-        padding: 2px;
-        border-radius: 10px;
-        box-shadow: -1px 1px 7px 0px #ffffff70;
-    }
-    .imageContent{
-        overflow: hidden;
-    }
-    .imageContent
-    .message{
-        display: flex;
-        flex-direction: column;
-        height: 90%;
-    }
-    .message__header{
-        padding: 10px;
-        color: white;
-        background: #1b1919;
-        font-weight: 600;
-    }
-    .message__header h6{
-        margin-bottom: 0px;
-        margin-top: 7px;
-    }
-    .socialMessage__container{
-        display: flex;
-        flex-direction: column;
-        height: 20rem;
-        align-items: center;
-        text-align: center;
-        border: 1px solid white;
-        border-radius: 10px;
-        background: white;
-    }
-    .imageContent .post__image{
-        display: block;
-        background-size: cover;
-        width: 100%;
-        height: 70%;
-    }
-    .imageContent .post__image img{
-        height: 100%;
-        width:100%;
-        border-radius: 8px;
-    }
-    .textContent .post__message{
-        display: flex;
-        font-size: 1.2rem;
-        margin: 5px;
-        margin-top: -20px;
-        width: 100%;
-        align-items: center;
-        text-align: center;
-        justify-content: center;
-        height: 21rem;
-        position: relative;
-    }
-    .imageContent .post__message{
-        display: flex;
-        margin: 5px;
-        margin-top: 0;
-        width: 100%;
-        height: 20%;
-        align-items: center;
-        height: 6rem;
-        position: relative;
-        font-size: 0.8rem;
-    }
-    .post__message::before{
-        position: absolute;
-        width: calc(100% - 1.6rem);
-        top:0;
-        left: 0.8rem;
-        background-image: linear-gradient(270deg,#ffffff,#2208ff);
-        display: block;
-        content: "";
-        height: 0.4rem;
-    }
-    .actions{
-        height: 10%;
-        width: 100%;
-    }
-    .actions svg{
-        width: 2rem !important; 
-        height: 30px;
-        color: white;
-        padding: 2px;
-        margin: 5px;
-    }
-    .actions a svg{
-        transition: ease-in-out 0.3s;
-        cursor: pointer;
-    }
-    .actions a svg:hover{
-        color: #ffffff9c;
-    }
-    .brand svg{
-        color: #1CA1F2;
-    }
+@media (min-width: 768px) {
+  .sns__container ul {
+    display: block;
+    padding: 1px;
+  }
+  .sns__container .on__sns {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 5px;
+    margin-left: 10px;
+    margin-right: 10px;
+    font-size: 1.2rem;
+    color: white;
+    font-weight: 600;
+    text-shadow: 5px 3px 20px #ffffff;
+  }
+  .on__sns::after {
+    position: absolute;
+    display: block;
+    content: "";
+    height: 0.1rem;
+    width: 100%;
+    background-color: white;
+  }
+  .sns__container button {
+    all: unset;
+    display: block;
+    width: 200px;
+    height: 30px;
+    text-align: center;
+    margin: 0 auto;
+    padding: 8px;
+    border-radius: 10px;
+    border: 1px solid #929292;
+    color: black;
+    font-weight: 700;
+    background: white;
+    box-shadow: 5px 3px 20px 0px white;
+    cursor: pointer;
+  }
+  .cardContent {
+    height: 26.5rem;
+    width: 33%;
+    border: 1px solid;
+    list-style: none;
+    display: inline-table;
+    margin: 1px;
+    background: #1b1919;
+    padding: 2px;
+    border-radius: 10px;
+    box-shadow: -1px 1px 7px 0px #ffffff70;
+  }
+  .imageContent {
+    overflow: hidden;
+  }
+  .imageContent .message {
+    display: flex;
+    flex-direction: column;
+    height: 90%;
+  }
+  .message__header {
+    padding: 10px;
+    color: white;
+    background: #1b1919;
+    font-weight: 600;
+  }
+  .message__header h6 {
+    margin-bottom: 0px;
+    margin-top: 7px;
+  }
+  .socialMessage__container {
+    display: flex;
+    flex-direction: column;
+    height: 20rem;
+    align-items: center;
+    text-align: center;
+    border: 1px solid white;
+    border-radius: 10px;
+    background: white;
+  }
+  .imageContent .post__image {
+    display: block;
+    background-size: cover;
+    width: 100%;
+    height: 70%;
+  }
+  .imageContent .post__image img {
+    height: 100%;
+    width: 100%;
+    border-radius: 8px;
+  }
+  .textContent .post__message {
+    display: flex;
+    font-size: 1.2rem;
+    margin: 5px;
+    margin-top: -20px;
+    width: 100%;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    height: 21rem;
+    position: relative;
+  }
+  .imageContent .post__message {
+    display: flex;
+    margin: 5px;
+    margin-top: 0;
+    width: 100%;
+    height: 20%;
+    align-items: center;
+    height: 6rem;
+    position: relative;
+    font-size: 0.8rem;
+  }
+  .post__message::before {
+    position: absolute;
+    width: calc(100% - 1.6rem);
+    top: 0;
+    left: 0.8rem;
+    background-image: linear-gradient(270deg, #ffffff, #2208ff);
+    display: block;
+    content: "";
+    height: 0.4rem;
+  }
+  .actions {
+    height: 10%;
+    width: 100%;
+  }
+  .actions svg {
+    width: 2rem !important;
+    height: 30px;
+    color: white;
+    padding: 2px;
+    margin: 5px;
+  }
+  .actions a svg {
+    transition: ease-in-out 0.3s;
+    cursor: pointer;
+  }
+  .actions a svg:hover {
+    color: #ffffff9c;
+  }
+  .brand svg {
+    color: #1ca1f2;
+  }
 }
-@media (min-width:425px) and (max-width:767px){
-    .sns__container ul{
-        display: block;
-        padding: 1px;
-    }
-    .sns__container .on__sns{
-        position: relative;
-        display: inline-block;
-        margin-bottom: 5px;
-        margin-left: 10px;
-        margin-right: 10px;
-        font-size: 1.2rem;
-        color: white;
-        font-weight: 600;
-        text-shadow: 5px 3px 20px #ffffff;
-    }
-    .on__sns::after{
-        position: absolute;
-        display: block;
-        content: "";
-        height: 0.1rem;
-        width: 100%;
-        background-color: white;
-    }
-    .sns__container button{
-        all: unset;
-        display: block;
-        width: 200px;
-        height: 30px;
-        text-align: center;
-        margin: 0 auto;
-        padding: 8px;
-        border-radius: 10px;
-        border: 1px solid #929292;
-        color: black;
-        font-weight: 700;
-        background: white;
-        box-shadow: 5px 3px 20px 0px white;
-        cursor: pointer;
-    }
-    .cardContent{
-        height: 26.5rem;
-        width: 50%;
-        border: 1px solid;
-        list-style: none;
-        display: inline-table;
-        background: #1b1919;
-        padding: 3px;
-        border-radius: 10px;
-        box-shadow: -1px 1px 7px 0px #00000070;
-    }
-    .imageContent{
-        overflow: hidden;
-    }
-    .imageContent
-    .message{
-        display: flex;
-        flex-direction: column;
-        height: 90%;
-    }
-    .message__header{
-        padding: 10px;
-        color: white;
-        background: #1b1919;
-        font-weight: 600;
-    }
-    .message__header h6{
-        margin-bottom: 0px;
-        margin-top: 7px;
-    }
-    .socialMessage__container{
-        display: flex;
-        flex-direction: column;
-        height: 20rem;
-        align-items: center;
-        text-align: center;
-        border: 1px solid white;
-        border-radius: 10px;
-        background: white;
-    }
-    .imageContent .post__image{
-        display: block;
-        background-size: cover;
-        width: 100%;
-        height: 70%;
-    }
-    .imageContent .post__image img{
-        height: 100%;
-        width:100%;
-        border-radius: 8px;
-    }
-    .textContent .post__message{
-        display: flex;
-        font-size: 1.0rem;
-        margin: 5px;
-        margin-top: -20px;
-        width: 100%;
-        align-items: center;
-        text-align: center;
-        justify-content: center;
-        height: 21rem;
-        position: relative;
-    }
-    .imageContent .post__message{
-        display: flex;
-        margin: 5px;
-        margin-top: 0;
-        width: 100%;
-        height: 20%;
-        align-items: center;
-        height: 6rem;
-        position: relative;
-        font-size: 0.8rem;
-    }
-    .post__message::before{
-        position: absolute;
-        width: calc(100% - 1.6rem);
-        top:0;
-        left: 0.8rem;
-        background-image: linear-gradient(270deg,#ffffff,#2208ff);
-        display: block;
-        content: "";
-        height: 0.4rem;
-    }
-    .actions{
-        height: 10%;
-        width: 100%;
-    }
-    .actions svg{
-        width: 2rem !important; 
-        height: 30px;
-        color: white;
-        padding: 2px;
-        margin: 5px;
-    }
-    .actions a svg{
-        transition: ease-in-out 0.3s;
-        cursor: pointer;
-    }
-    .actions a svg:hover{
-        color: #ffffff9c;
-    }
-    .brand svg{
-        color: #1CA1F2;
-    }
+@media (min-width: 425px) and (max-width: 767px) {
+  .sns__container ul {
+    display: block;
+    padding: 1px;
+  }
+  .sns__container .on__sns {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 5px;
+    margin-left: 10px;
+    margin-right: 10px;
+    font-size: 1.2rem;
+    color: white;
+    font-weight: 600;
+    text-shadow: 5px 3px 20px #ffffff;
+  }
+  .on__sns::after {
+    position: absolute;
+    display: block;
+    content: "";
+    height: 0.1rem;
+    width: 100%;
+    background-color: white;
+  }
+  .sns__container button {
+    all: unset;
+    display: block;
+    width: 200px;
+    height: 30px;
+    text-align: center;
+    margin: 0 auto;
+    padding: 8px;
+    border-radius: 10px;
+    border: 1px solid #929292;
+    color: black;
+    font-weight: 700;
+    background: white;
+    box-shadow: 5px 3px 20px 0px white;
+    cursor: pointer;
+  }
+  .cardContent {
+    height: 26.5rem;
+    width: 50%;
+    border: 1px solid;
+    list-style: none;
+    display: inline-table;
+    background: #1b1919;
+    padding: 3px;
+    border-radius: 10px;
+    box-shadow: -1px 1px 7px 0px #00000070;
+  }
+  .imageContent {
+    overflow: hidden;
+  }
+  .imageContent .message {
+    display: flex;
+    flex-direction: column;
+    height: 90%;
+  }
+  .message__header {
+    padding: 10px;
+    color: white;
+    background: #1b1919;
+    font-weight: 600;
+  }
+  .message__header h6 {
+    margin-bottom: 0px;
+    margin-top: 7px;
+  }
+  .socialMessage__container {
+    display: flex;
+    flex-direction: column;
+    height: 20rem;
+    align-items: center;
+    text-align: center;
+    border: 1px solid white;
+    border-radius: 10px;
+    background: white;
+  }
+  .imageContent .post__image {
+    display: block;
+    background-size: cover;
+    width: 100%;
+    height: 70%;
+  }
+  .imageContent .post__image img {
+    height: 100%;
+    width: 100%;
+    border-radius: 8px;
+  }
+  .textContent .post__message {
+    display: flex;
+    font-size: 1rem;
+    margin: 5px;
+    margin-top: -20px;
+    width: 100%;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    height: 21rem;
+    position: relative;
+  }
+  .imageContent .post__message {
+    display: flex;
+    margin: 5px;
+    margin-top: 0;
+    width: 100%;
+    height: 20%;
+    align-items: center;
+    height: 6rem;
+    position: relative;
+    font-size: 0.8rem;
+  }
+  .post__message::before {
+    position: absolute;
+    width: calc(100% - 1.6rem);
+    top: 0;
+    left: 0.8rem;
+    background-image: linear-gradient(270deg, #ffffff, #2208ff);
+    display: block;
+    content: "";
+    height: 0.4rem;
+  }
+  .actions {
+    height: 10%;
+    width: 100%;
+  }
+  .actions svg {
+    width: 2rem !important;
+    height: 30px;
+    color: white;
+    padding: 2px;
+    margin: 5px;
+  }
+  .actions a svg {
+    transition: ease-in-out 0.3s;
+    cursor: pointer;
+  }
+  .actions a svg:hover {
+    color: #ffffff9c;
+  }
+  .brand svg {
+    color: #1ca1f2;
+  }
 }
-@media (max-width:424px) and (min-width:320px){
-    .sns__container ul{
-        display: block;
-        padding: 1px;
-    }
-    .sns__container .on__sns{
-        position: relative;
-        display: inline-block;
-        margin-bottom: 5px;
-        margin-left: 10px;
-        margin-right: 10px;
-        font-size: 1.2rem;
-        color: white;
-        font-weight: 600;
-        text-shadow: 5px 3px 20px #ffffff;
-    }
-    .on__sns::after{
-        position: absolute;
-        display: block;
-        content: "";
-        height: 0.1rem;
-        width: 100%;
-        background-color: white;
-    }
-    .sns__container button{
-        all: unset;
-        display: block;
-        width: 200px;
-        height: 30px;
-        text-align: center;
-        margin: 0 auto;
-        padding: 8px;
-        border-radius: 10px;
-        border: 1px solid #929292;
-        color: black;
-        font-weight: 700;
-        background: white;
-        box-shadow: 5px 3px 20px 0px white;
-        cursor: pointer;
-    }
-    .cardContent{
-        height: 24rem;
-        width: 100%;
-        border: 1px solid;
-        list-style: none;
-        display: inline-table;
-        background: #1b1919;
-        padding: 3px;
-        margin: 3px;
-        border-radius: 10px;
-        box-shadow: -1px 1px 7px 0px #00000070;
-    }
-    .imageContent{
-        overflow: hidden;
-    }
-    .imageContent
-    .message{
-        display: flex;
-        flex-direction: column;
-        height: 90%;
-    }
-    .message__header{
-        padding: 10px;
-        color: white;
-        background: #1b1919;
-        font-weight: 600;
-    }
-    .message__header h6{
-        margin-bottom: 0px;
-        margin-top: 7px;
-    }
-    .socialMessage__container{
-        display: flex;
-        flex-direction: column;
-        height: 20rem;
-        align-items: center;
-        text-align: center;
-        border: 1px solid white;
-        border-radius: 10px;
-        background: white;
-    }
-    .imageContent .post__image{
-        display: block;
-        background-size: cover;
-        width: 100%;
-        height: 70%;
-    }
-    .imageContent .post__image img{
-        height: 100%;
-        width:100%;
-        border-radius: 8px;
-    }
-    .textContent .post__message{
-        display: flex;
-        font-size: 1.0rem;
-        margin: 5px;
-        margin-top: -20px;
-        width: 100%;
-        align-items: center;
-        text-align: center;
-        justify-content: center;
-        height: 21rem;
-        position: relative;
-    }
-    .imageContent .post__message{
-        display: flex;
-        margin: 5px;
-        margin-top: 0;
-        width: 100%;
-        height: 20%;
-        align-items: center;
-        height: 6rem;
-        position: relative;
-        font-size: 0.8rem;
-    }
-    .post__message::before{
-        position: absolute;
-        width: calc(100% - 1.6rem);
-        top:0;
-        left: 0.8rem;
-        background-image: linear-gradient(270deg,#ffffff,#2208ff);
-        display: block;
-        content: "";
-        height: 0.4rem;
-    }
-    .actions{
-        height: 10%;
-        width: 100%;
-    }
-    .actions svg{
-        width: 2rem !important; 
-        height: 30px;
-        color: white;
-        padding: 2px;
-        margin: 5px;
-    }
-    .actions a svg{
-        transition: ease-in-out 0.3s;
-        cursor: pointer;
-    }
-    .actions a svg:hover{
-        color: #ffffff9c;
-    }
-    .brand svg{
-        color: #1CA1F2;
-    }
+@media (max-width: 424px) and (min-width: 320px) {
+  .sns__container ul {
+    display: block;
+    padding: 1px;
+  }
+  .sns__container .on__sns {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 5px;
+    margin-left: 10px;
+    margin-right: 10px;
+    font-size: 1.2rem;
+    color: white;
+    font-weight: 600;
+    text-shadow: 5px 3px 20px #ffffff;
+  }
+  .on__sns::after {
+    position: absolute;
+    display: block;
+    content: "";
+    height: 0.1rem;
+    width: 100%;
+    background-color: white;
+  }
+  .sns__container button {
+    all: unset;
+    display: block;
+    width: 200px;
+    height: 30px;
+    text-align: center;
+    margin: 0 auto;
+    padding: 8px;
+    border-radius: 10px;
+    border: 1px solid #929292;
+    color: black;
+    font-weight: 700;
+    background: white;
+    box-shadow: 5px 3px 20px 0px white;
+    cursor: pointer;
+  }
+  .cardContent {
+    height: 24rem;
+    width: 100%;
+    border: 1px solid;
+    list-style: none;
+    display: inline-table;
+    background: #1b1919;
+    padding: 3px;
+    margin: 3px;
+    border-radius: 10px;
+    box-shadow: -1px 1px 7px 0px #00000070;
+  }
+  .imageContent {
+    overflow: hidden;
+  }
+  .imageContent .message {
+    display: flex;
+    flex-direction: column;
+    height: 90%;
+  }
+  .message__header {
+    padding: 10px;
+    color: white;
+    background: #1b1919;
+    font-weight: 600;
+  }
+  .message__header h6 {
+    margin-bottom: 0px;
+    margin-top: 7px;
+  }
+  .socialMessage__container {
+    display: flex;
+    flex-direction: column;
+    height: 20rem;
+    align-items: center;
+    text-align: center;
+    border: 1px solid white;
+    border-radius: 10px;
+    background: white;
+  }
+  .imageContent .post__image {
+    display: block;
+    background-size: cover;
+    width: 100%;
+    height: 70%;
+  }
+  .imageContent .post__image img {
+    height: 100%;
+    width: 100%;
+    border-radius: 8px;
+  }
+  .textContent .post__message {
+    display: flex;
+    font-size: 1rem;
+    margin: 5px;
+    margin-top: -20px;
+    width: 100%;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    height: 21rem;
+    position: relative;
+  }
+  .imageContent .post__message {
+    display: flex;
+    margin: 5px;
+    margin-top: 0;
+    width: 100%;
+    height: 20%;
+    align-items: center;
+    height: 6rem;
+    position: relative;
+    font-size: 0.8rem;
+    padding: 5px;
+  }
+  .post__message::before {
+    position: absolute;
+    width: calc(100% - 1.6rem);
+    top: 0;
+    left: 0.8rem;
+    background-image: linear-gradient(270deg, #ffffff, #2208ff);
+    display: block;
+    content: "";
+    height: 0.4rem;
+  }
+  .actions {
+    height: 10%;
+    width: 100%;
+  }
+  .actions svg {
+    width: 2rem !important;
+    height: 30px;
+    color: white;
+    padding: 2px;
+    margin: 5px;
+  }
+  .actions a svg {
+    transition: ease-in-out 0.3s;
+    cursor: pointer;
+  }
+  .actions a svg:hover {
+    color: #ffffff9c;
+  }
+  .brand svg {
+    color: #1ca1f2;
+  }
 }
-

@@ -18,11 +18,8 @@ app.use(bodyparser.json());
 app.use(morgan("dev"));//common,tiny,dev
 app.use('/static',express.static(__dirname + '/public'))
 
-
 app.use("/",globalRouter);
-
 const PORT=process.env.PORT || 3000;
-
 http.createServer(app).listen(PORT,()=>{
     console.log(`Express is running on PORT:${PORT}`)
 });

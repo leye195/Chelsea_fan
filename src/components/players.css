@@ -1,0 +1,151 @@
+.player-container {
+  max-height: 600px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.player-header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  height: 50%;
+  background: linear-gradient(90deg, #6267ff, #e2173d) !important;
+  box-shadow: 1px 2px 20px 2px #403f3f85;
+}
+.player-header .imgContainer,
+.player-header .playerDetail,
+.player-header .numberTag {
+  flex-grow: 1;
+}
+.player-header .imgContainer {
+  position: relative;
+  display: flex;
+  height: 100%;
+  align-items: flex-end;
+  justify-content: center;
+  flex-grow: 0.5;
+}
+.player-header .imgContainer img {
+  height: 200px;
+}
+.player-header .playerDetail {
+  display: flex;
+  flex-direction: column;
+  font-size: 1.5rem;
+  height: 100%;
+  justify-content: center;
+}
+.player-header .playerDetail .number {
+  font-size: 4rem;
+  margin-top: 50px;
+}
+.player-header .numberTag {
+  -webkit-text-stroke: 2px white;
+  font-size: 10.5rem;
+  text-align: center;
+  color: transparent;
+  /* flex-grow: 2; */
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.player-body {
+  display: flex;
+  height: 50%;
+}
+.player-body nav {
+  width: 30%;
+  border-right: 4px solid #e8e8e8;
+}
+.player-body .details {
+  width: 70%;
+}
+.player-body nav aside {
+  padding: 10px 20px;
+}
+.player-body nav aside .asideSection {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 1rem 0;
+  position: relative;
+  border-bottom: 0;
+  padding: 0px;
+  margin: 10px;
+  border: 1px solid #e3e3e3;
+  box-shadow: 0px 1px 5px 2px #8c8c8c;
+}
+.player-body nav aside .intro::before {
+  content: "";
+  height: 8px;
+  background: linear-gradient(270deg, #000000, #2d09f1e8);
+  width: 95%;
+  margin: 0 auto;
+}
+.player-body nav aside .asideSection .label {
+  padding: 10px 10px;
+  border-bottom: 1px solid #e3e3e3;
+}
+.player-body nav aside .asideSection .info {
+  padding: 10px 10px;
+  border-bottom: 1px solid #e3e3e3;
+}
+.info {
+  width: 80%;
+  text-align: right;
+  font-weight: 700;
+}
+.label {
+  width: 20%;
+  font-weight: 200;
+}
+.details .playerInfo {
+  padding: 20px 20px 5px 20px;
+}
+.playerInfo section h3,
+.career section h3 {
+  color: black;
+  padding: 5px;
+  font-size: 1.5rem;
+  margin: 0;
+}
+.playerInfo section ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+}
+.playerInfo section ul li {
+  display: flex;
+  flex: 1;
+  padding: 15px;
+  border: 1px solid #e3e3e3;
+  border-right: none;
+}
+.playerInfo section ul li:last-child {
+  border-right: 1px solid #e3e3e3;
+}
+.career section h3 {
+  padding-top: 20px;
+  padding-left: 25px;
+}
+.career section table {
+  width: 95%;
+  margin: 0 auto;
+}
+.career section table thead {
+  background: #e3e3e3;
+}
+.career section table thead tr th {
+  font-weight: 300;
+  padding: 5px;
+}
+.career section table tbody tr {
+  font-weight: 500;
+  padding: 5px;
+  text-align: center;
+}
+.career section table tbody tr td {
+  padding: 5px 10px;
+}
